@@ -1,0 +1,218 @@
+{
+    "version": "1.0.0",
+    "description": "Language-agnostic cryptographic function classifications",
+    "classifications": {
+        "pbkdf2_key": {
+            "algorithm": "PBKDF2",
+            "findingType": "kdf",
+            "operation": "keyderive"
+        },
+        "sha256_new": {
+            "algorithm": "SHA-256",
+            "findingType": "hash",
+            "operation": "hash"
+        },
+        "sha256_sum": {
+            "algorithm": "SHA-256",
+            "findingType": "hash",
+            "operation": "hash"
+        },
+        "sha256_sum256": {
+            "algorithm": "SHA-256",
+            "findingType": "hash",
+            "operation": "hash"
+        },
+        "sha512_new": {
+            "algorithm": "SHA-512",
+            "findingType": "hash",
+            "operation": "hash"
+        },
+        "sha512_sum": {
+            "algorithm": "SHA-512",
+            "findingType": "hash",
+            "operation": "hash"
+        },
+        "sha384_new": {
+            "algorithm": "SHA-384",
+            "findingType": "hash",
+            "operation": "hash"
+        },
+        "sha384_sum": {
+            "algorithm": "SHA-384",
+            "findingType": "hash",
+            "operation": "hash"
+        },
+        "sha224_new": {
+            "algorithm": "SHA-224",
+            "findingType": "hash",
+            "operation": "hash"
+        },
+        "sha224_sum": {
+            "algorithm": "SHA-224",
+            "findingType": "hash",
+            "operation": "hash"
+        },
+        "sha1_new": {
+            "algorithm": "SHA-1",
+            "findingType": "hash",
+            "operation": "hash"
+        },
+        "sha1_sum": {
+            "algorithm": "SHA-1",
+            "findingType": "hash",
+            "operation": "hash"
+        },
+        "md5_new": {
+            "algorithm": "MD5",
+            "findingType": "hash",
+            "operation": "hash"
+        },
+        "md5_sum": {
+            "algorithm": "MD5",
+            "findingType": "hash",
+            "operation": "hash"
+        },
+        "aes_newcipher": {
+            "algorithm": "AES",
+            "findingType": "cipher"
+        },
+        "aes_encrypt": {
+            "algorithm": "AES",
+            "findingType": "cipher",
+            "operation": "encrypt"
+        },
+        "aes_decrypt": {
+            "algorithm": "AES",
+            "findingType": "cipher",
+            "operation": "decrypt"
+        },
+        "ecdsa_sign": {
+            "algorithm": "ECDSA",
+            "findingType": "signature",
+            "operation": "sign"
+        },
+        "ecdsa_verify": {
+            "algorithm": "ECDSA",
+            "findingType": "signature",
+            "operation": "verify"
+        },
+        "ecdsa_generatekey": {
+            "algorithm": "ECDSA",
+            "findingType": "signature",
+            "operation": "generate"
+        },
+        "elliptic_p256": {
+            "algorithm": "ECDSA",
+            "findingType": "signature"
+        },
+        "elliptic_p384": {
+            "algorithm": "ECDSA",
+            "findingType": "signature"
+        },
+        "elliptic_p521": {
+            "algorithm": "ECDSA",
+            "findingType": "signature"
+        },
+        "hmac_new": {
+            "algorithm": "HMAC",
+            "findingType": "mac"
+        },
+        "rsa_encryptpkcs1v15": {
+            "algorithm": "RSA",
+            "findingType": "cipher",
+            "operation": "encrypt"
+        },
+        "rsa_encryptoaep": {
+            "algorithm": "RSA",
+            "findingType": "cipher",
+            "operation": "encrypt"
+        },
+        "rsa_decryptpkcs1v15sessionkey": {
+            "algorithm": "RSA",
+            "findingType": "cipher",
+            "operation": "decrypt"
+        },
+        "rsa_decryptoaep": {
+            "algorithm": "RSA",
+            "findingType": "cipher",
+            "operation": "decrypt"
+        },
+        "rsa_signpkcs1v15": {
+            "algorithm": "RSA",
+            "findingType": "signature",
+            "operation": "sign"
+        },
+        "rsa_signpss": {
+            "algorithm": "RSA",
+            "findingType": "signature",
+            "operation": "sign"
+        },
+        "rsa_verifypkcs1v15": {
+            "algorithm": "RSA",
+            "findingType": "signature",
+            "operation": "verify"
+        },
+        "rsa_verifypss": {
+            "algorithm": "RSA",
+            "findingType": "signature",
+            "operation": "verify"
+        },
+        "ed25519_verify": {
+            "algorithm": "Ed25519",
+            "findingType": "signature",
+            "operation": "verify"
+        },
+        "ed25519_publickey": {
+            "algorithm": "Ed25519",
+            "findingType": "signature"
+        },
+        "ed25519_privatekey": {
+            "algorithm": "Ed25519",
+            "findingType": "signature"
+        },
+        "x509_newcertpool": {
+            "findingType": "certificate"
+        },
+        "x509_parsecertificate": {
+            "findingType": "certificate"
+        },
+        "subtle_constanttimecompare": {
+            "findingType": "utility"
+        },
+        "tls_dial": {
+            "findingType": "protocol"
+        },
+        "tls_listen": {
+            "findingType": "protocol"
+        },
+        "tls_server": {
+            "findingType": "protocol"
+        },
+        "tls_client": {
+            "findingType": "protocol"
+        },
+        "tls_loadx509keypair": {
+            "findingType": "certificate"
+        },
+        "tls_x509keypair": {
+            "findingType": "certificate"
+        },
+        "cipher_seal": {
+            "findingType": "aead",
+            "operation": "seal"
+        },
+        "cipher_open": {
+            "findingType": "aead",
+            "operation": "unseal"
+        },
+        "cipher_newgcm": {
+            "findingType": "aead"
+        },
+        "cipher_newcbcencrypter": {
+            "findingType": "cipher"
+        },
+        "cipher_newcbcdecrypter": {
+            "findingType": "cipher"
+        }
+    }
+}
