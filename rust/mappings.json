@@ -3,138 +3,262 @@
     "language": "rust",
     "description": "Rust-specific cryptographic function mappings",
     "mappings": {
-        "ring::pbkdf2::derive": "pbkdf2_key",
-        "ring::digest::digest": "sha256_sum",
-        "ring::digest::SHA256": "sha256_new",
-        "ring::digest::SHA512": "sha512_new",
-        "ring::digest::SHA384": "sha384_new",
-        "ring::digest::SHA1": "sha1_new",
-        "sha2::Sha256::new": "sha256_new",
-        "sha2::Sha256::digest": "sha256_sum",
-        "sha2::Sha256::finalize": "sha256_sum",
-        "sha2::Sha512::new": "sha512_new",
-        "sha2::Sha512::digest": "sha512_sum",
-        "sha2::Sha384::new": "sha384_new",
-        "sha2::Sha384::digest": "sha384_sum",
-        "sha1::Sha1::new": "sha1_new",
-        "sha1::Sha1::digest": "sha1_sum",
-        "md5::Md5::new": "md5_new",
-        "md5::Md5::digest": "md5_sum",
-        "aes::Aes128::new": "aes_newcipher",
-        "aes::Aes256::new": "aes_newcipher",
-        "aes::Aes128Gcm::new": "cipher_newgcm",
-        "aes::Aes256Gcm::new": "cipher_newgcm",
-        "aes_gcm::Aes128Gcm::new": "cipher_newgcm",
-        "aes_gcm::Aes256Gcm::new": "cipher_newgcm",
-        "aes_gcm::AesGcm::encrypt": "cipher_seal",
-        "aes_gcm::AesGcm::decrypt": "cipher_open",
-        "ring::aead::seal": "cipher_seal",
-        "ring::aead::open": "cipher_open",
-        "ring::aead::AES_256_GCM": "cipher_newgcm",
-        "ring::aead::AES_128_GCM": "cipher_newgcm",
-        "p256::SecretKey::random": "ecdsa_generatekey",
-        "p384::SecretKey::random": "ecdsa_generatekey",
-        "p521::SecretKey::random": "ecdsa_generatekey",
-        "ecdsa::SigningKey::new": "ecdsa_generatekey",
-        "ecdsa::SigningKey::sign": "ecdsa_signasn1",
-        "ecdsa::VerifyingKey::verify": "ecdsa_verifyasn1",
-        "ring::signature::sign": "ecdsa_sign",
-        "ring::signature::verify": "ecdsa_verify",
-        "ring::signature::ECDSA_P256_SHA256_ASN1_SIGNING": "elliptic_p256",
-        "ring::signature::ECDSA_P384_SHA384_ASN1_SIGNING": "elliptic_p384",
-        "ring::hmac::sign": "hmac_new",
-        "hmac::Hmac::new": "hmac_new",
-        "hmac::Hmac::update": "hmac_new",
-        "hmac::Hmac::finalize": "hmac_new",
-        "rsa::RsaPrivateKey::new": "rsa_generatekey",
-        "rsa::RsaPublicKey::encrypt": "rsa_encryptpkcs1v15",
-        "rsa::RsaPrivateKey::decrypt": "rsa_decryptoaep",
-        "rsa::RsaPrivateKey::sign": "rsa_signpkcs1v15",
-        "rsa::RsaPublicKey::verify": "rsa_verifypkcs1v15",
-        "ring::signature::RSA_PKCS1_2048_8192_SHA256": "rsa_signpkcs1v15",
-        "ring::signature::RSA_PSS_2048_8192_SHA256": "rsa_signpss",
-        "ed25519_dalek::SigningKey::sign": "ed25519_sign",
-        "ed25519_dalek::VerifyingKey::verify": "ed25519_verify",
-        "x509_parser::parse_x509_certificate": "x509_parsecertificate",
-        "rustls::Certificate::from_der": "x509_parsecertificate",
-        "rustls::ClientConfig::new": "tls_client",
-        "rustls::ServerConfig::new": "tls_server",
-        "constant_time_eq::constant_time_eq": "subtle_constanttimecompare",
-        "sha3::Sha3_224::new": "sha3_new224",
-        "sha3::Sha3_256::new": "sha3_new256",
-        "sha3::Sha3_384::new": "sha3_new384",
-        "sha3::Sha3_512::new": "sha3_new512",
-        "sha3::Shake128::new": "sha3_shake128",
-        "sha3::Shake256::new": "sha3_shake256",
-        "sha3::Sha3_224::digest": "sha3_new224",
-        "sha3::Sha3_256::digest": "sha3_new256",
-        "sha3::Sha3_384::digest": "sha3_new384",
-        "sha3::Sha3_512::digest": "sha3_new512",
-        "hmac::Hmac::verify": "hmac_equal",
-        "hmac::verify": "hmac_equal",
-        "ring::hmac::verify": "hmac_equal",
-        "rand::thread_rng": "rand_reader",
-        "rand::rngs::ThreadRng": "rand_reader",
-        "rand::RngCore::fill_bytes": "rand_read",
-        "rand::Rng::gen": "rand_int",
-        "rand::random": "rand_int",
-        "rand::Rng::gen_range": "rand_int",
-        "rsa::RsaPrivateKey::from_pkcs8": "x509_parsepkcs8privatekey",
-        "rsa::RsaPublicKey::from_pkcs8": "x509_parsepkixpublickey",
-        "rsa::RsaPrivateKey::from_pkcs1": "x509_parsepkcs1privatekey",
-        "rsa::RsaPublicKey::from_pkcs1": "x509_parsepkcs1publickey",
-        "rsa::RsaPrivateKey::to_pkcs8": "x509_marshalpkcs8privatekey",
-        "rsa::RsaPublicKey::to_pkcs8": "x509_marshalpkixpublickey",
-        "rsa::RsaPrivateKey::to_pkcs1": "x509_marshalpkcs1privatekey",
-        "rsa::RsaPublicKey::to_pkcs1": "x509_marshalpkcs1publickey",
-        "p256::SecretKey::from_bytes": "ecdh_p256_generatekey",
-        "p384::SecretKey::from_bytes": "ecdh_p384_generatekey",
-        "p521::SecretKey::from_bytes": "ecdh_p521_generatekey",
-        "p256::PublicKey::from_secret_key": "ecdh_p256_generatekey",
-        "p384::PublicKey::from_secret_key": "ecdh_p384_generatekey",
-        "p521::PublicKey::from_secret_key": "ecdh_p521_generatekey",
-        "x25519_dalek::StaticSecret::random": "ecdh_x25519_generatekey",
-        "x25519_dalek::PublicKey::from": "ecdh_x25519_generatekey",
-        "x25519_dalek::StaticSecret::diffie_hellman": "ecdh_computesecret",
-        "ed25519_dalek::SigningKey::generate": "ed25519_generatekey",
-        "ed25519_dalek::SigningKey::from_bytes": "ed25519_newkeyfromseed",
-        "ed25519_dalek::VerifyingKey::verify_strict": "ed25519_verifywithoptions",
-        "hkdf::Hkdf::extract": "hkdf_extract",
-        "hkdf::Hkdf::expand": "hkdf_expand",
-        "hkdf::Hkdf::from_prk": "hkdf_key",
-        "des::Des": "des_newcipher",
-        "des::TdesEde3": "des3_newcipher",
-        "des::TdesEde2": "des3_newcipher",
-        "rc4::Rc4": "rc4_newcipher",
-        "chacha20poly1305::ChaCha20Poly1305::new": "chacha20poly1305_new",
-        "chacha20poly1305::XChaCha20Poly1305::new": "chacha20poly1305_newx",
-        "chacha20poly1305::ChaCha20Poly1305::encrypt": "chacha20poly1305_new",
-        "chacha20poly1305::ChaCha20Poly1305::decrypt": "chacha20poly1305_new",
-        "argon2::Argon2::hash_password": "argon2id_key",
-        "argon2::Argon2::hash_password_into": "argon2id_key",
-        "argon2::Argon2::verify_password": "argon2id_key",
-        "scrypt::scrypt": "scrypt_key",
-        "scrypt::scrypt_simple": "scrypt_key",
-        "x509_parser::parse_x509_certificates": "x509_parsecertificates",
-        "x509_parser::parse_x509_csr": "x509_parsecertificaterequest",
-        "x509_parser::parse_x509_crl": "x509_parsecrl",
-        "x509_parser::parse_x509_crl_der": "x509_parsedercrl",
-        "rustls::pki_types::CertificateDer::from": "x509_parsecertificate",
-        "rustls::pki_types::PrivateKeyDer::from": "x509_parsepkcs8privatekey",
-        "rustls::pki_types::CertificateDer::from_pem": "x509_parsecertificate",
-        "rustls::pki_types::PrivateKeyDer::from_pem": "x509_parsepkcs8privatekey",
-        "rustls::pki_types::CertificateDer::from_der": "x509_parsecertificate",
-        "rustls::pki_types::PrivateKeyDer::from_der": "x509_parsepkcs8privatekey",
-        "rustls::ClientConfig::with_root_certificates": "x509_newcertpool",
-        "rustls::ServerConfig::with_single_cert": "tls_loadx509keypair",
-        "rustls::ServerConfig::with_single_cert_with_ocsp": "tls_loadx509keypair",
-        "rustls::ClientConfig::with_client_auth_cert": "tls_loadx509keypair",
-        "rustls::pki_types::ServerName::try_from": "tls_client",
-        "rustls::pki_types::DnsName::try_from": "tls_client",
-        "rustls::pki_types::IpAddr::try_from": "tls_client",
-        "rustls::ProtocolVersion::TLSv1_2": "tls_version_tls12",
-        "rustls::ProtocolVersion::TLSv1_3": "tls_version_tls13",
-        "rustls::SupportedProtocolVersion::TLSv1_2": "tls_version_tls12",
-        "rustls::SupportedProtocolVersion::TLSv1_3": "tls_version_tls13"
+        "ring::pbkdf2": {
+            "derive": "pbkdf2_key"
+        },
+        "ring::digest": {
+            "digest": "sha256_sum",
+            "SHA256": "sha256_new",
+            "SHA512": "sha512_new",
+            "SHA384": "sha384_new",
+            "SHA1": "sha1_new"
+        },
+        "ring::aead": {
+            "seal": "cipher_seal",
+            "open": "cipher_open",
+            "AES_256_GCM": "cipher_newgcm",
+            "AES_128_GCM": "cipher_newgcm"
+        },
+        "ring::signature": {
+            "sign": "ecdsa_sign",
+            "verify": "ecdsa_verify",
+            "ECDSA_P256_SHA256_ASN1_SIGNING": "elliptic_p256",
+            "ECDSA_P384_SHA384_ASN1_SIGNING": "elliptic_p384",
+            "RSA_PKCS1_2048_8192_SHA256": "rsa_signpkcs1v15",
+            "RSA_PSS_2048_8192_SHA256": "rsa_signpss"
+        },
+        "ring::hmac": {
+            "sign": "hmac_new",
+            "verify": "hmac_equal"
+        },
+        "sha2::Sha256": {
+            "new": "sha256_new",
+            "digest": "sha256_sum",
+            "finalize": "sha256_sum"
+        },
+        "sha2::Sha512": {
+            "new": "sha512_new",
+            "digest": "sha512_sum"
+        },
+        "sha2::Sha384": {
+            "new": "sha384_new",
+            "digest": "sha384_sum"
+        },
+        "sha1::Sha1": {
+            "new": "sha1_new",
+            "digest": "sha1_sum"
+        },
+        "md5::Md5": {
+            "new": "md5_new",
+            "digest": "md5_sum"
+        },
+        "aes::Aes128": {
+            "new": "aes_newcipher"
+        },
+        "aes::Aes256": {
+            "new": "aes_newcipher"
+        },
+        "aes::Aes128Gcm": {
+            "new": "cipher_newgcm"
+        },
+        "aes::Aes256Gcm": {
+            "new": "cipher_newgcm"
+        },
+        "aes_gcm::Aes128Gcm": {
+            "new": "cipher_newgcm"
+        },
+        "aes_gcm::Aes256Gcm": {
+            "new": "cipher_newgcm"
+        },
+        "aes_gcm::AesGcm": {
+            "encrypt": "cipher_seal",
+            "decrypt": "cipher_open"
+        },
+        "p256::SecretKey": {
+            "random": "ecdsa_generatekey",
+            "from_bytes": "ecdh_p256_generatekey"
+        },
+        "p256::PublicKey": {
+            "from_secret_key": "ecdh_p256_generatekey"
+        },
+        "p384::SecretKey": {
+            "random": "ecdsa_generatekey",
+            "from_bytes": "ecdh_p384_generatekey"
+        },
+        "p384::PublicKey": {
+            "from_secret_key": "ecdh_p384_generatekey"
+        },
+        "p521::SecretKey": {
+            "random": "ecdsa_generatekey",
+            "from_bytes": "ecdh_p521_generatekey"
+        },
+        "p521::PublicKey": {
+            "from_secret_key": "ecdh_p521_generatekey"
+        },
+        "ecdsa::SigningKey": {
+            "new": "ecdsa_generatekey",
+            "sign": "ecdsa_signasn1"
+        },
+        "ecdsa::VerifyingKey": {
+            "verify": "ecdsa_verifyasn1"
+        },
+        "hmac::Hmac": {
+            "new": "hmac_new",
+            "update": "hmac_new",
+            "finalize": "hmac_new",
+            "verify": "hmac_equal"
+        },
+        "hmac": {
+            "verify": "hmac_equal"
+        },
+        "rsa::RsaPrivateKey": {
+            "new": "rsa_generatekey",
+            "decrypt": "rsa_decryptoaep",
+            "sign": "rsa_signpkcs1v15",
+            "from_pkcs8": "x509_parsepkcs8privatekey",
+            "from_pkcs1": "x509_parsepkcs1privatekey",
+            "to_pkcs8": "x509_marshalpkcs8privatekey",
+            "to_pkcs1": "x509_marshalpkcs1privatekey"
+        },
+        "rsa::RsaPublicKey": {
+            "encrypt": "rsa_encryptpkcs1v15",
+            "verify": "rsa_verifypkcs1v15",
+            "from_pkcs8": "x509_parsepkixpublickey",
+            "from_pkcs1": "x509_parsepkcs1publickey",
+            "to_pkcs8": "x509_marshalpkixpublickey",
+            "to_pkcs1": "x509_marshalpkcs1publickey"
+        },
+        "ed25519_dalek::SigningKey": {
+            "sign": "ed25519_sign",
+            "generate": "ed25519_generatekey",
+            "from_bytes": "ed25519_newkeyfromseed"
+        },
+        "ed25519_dalek::VerifyingKey": {
+            "verify": "ed25519_verify",
+            "verify_strict": "ed25519_verifywithoptions"
+        },
+        "x509_parser": {
+            "parse_x509_certificate": "x509_parsecertificate",
+            "parse_x509_certificates": "x509_parsecertificates",
+            "parse_x509_csr": "x509_parsecertificaterequest",
+            "parse_x509_crl": "x509_parsecrl",
+            "parse_x509_crl_der": "x509_parsedercrl"
+        },
+        "rustls::Certificate": {
+            "from_der": "x509_parsecertificate"
+        },
+        "rustls::ClientConfig": {
+            "new": "tls_client",
+            "with_root_certificates": "x509_newcertpool",
+            "with_client_auth_cert": "tls_loadx509keypair"
+        },
+        "rustls::ServerConfig": {
+            "new": "tls_server",
+            "with_single_cert": "tls_loadx509keypair",
+            "with_single_cert_with_ocsp": "tls_loadx509keypair"
+        },
+        "rustls::pki_types::CertificateDer": {
+            "from": "x509_parsecertificate",
+            "from_pem": "x509_parsecertificate",
+            "from_der": "x509_parsecertificate"
+        },
+        "rustls::pki_types::PrivateKeyDer": {
+            "from": "x509_parsepkcs8privatekey",
+            "from_pem": "x509_parsepkcs8privatekey",
+            "from_der": "x509_parsepkcs8privatekey"
+        },
+        "rustls::pki_types::ServerName": {
+            "try_from": "tls_client"
+        },
+        "rustls::pki_types::DnsName": {
+            "try_from": "tls_client"
+        },
+        "rustls::pki_types::IpAddr": {
+            "try_from": "tls_client"
+        },
+        "rustls::ProtocolVersion": {
+            "TLSv1_2": "tls_version_tls12",
+            "TLSv1_3": "tls_version_tls13"
+        },
+        "rustls::SupportedProtocolVersion": {
+            "TLSv1_2": "tls_version_tls12",
+            "TLSv1_3": "tls_version_tls13"
+        },
+        "constant_time_eq": {
+            "constant_time_eq": "subtle_constanttimecompare"
+        },
+        "sha3::Sha3_224": {
+            "new": "sha3_new224",
+            "digest": "sha3_new224"
+        },
+        "sha3::Sha3_256": {
+            "new": "sha3_new256",
+            "digest": "sha3_new256"
+        },
+        "sha3::Sha3_384": {
+            "new": "sha3_new384",
+            "digest": "sha3_new384"
+        },
+        "sha3::Sha3_512": {
+            "new": "sha3_new512",
+            "digest": "sha3_new512"
+        },
+        "sha3::Shake128": {
+            "new": "sha3_shake128"
+        },
+        "sha3::Shake256": {
+            "new": "sha3_shake256"
+        },
+        "rand": {
+            "thread_rng": "rand_reader",
+            "random": "rand_int"
+        },
+        "rand::rngs": {
+            "ThreadRng": "rand_reader"
+        },
+        "rand::RngCore": {
+            "fill_bytes": "rand_read"
+        },
+        "rand::Rng": {
+            "gen": "rand_int",
+            "gen_range": "rand_int"
+        },
+        "x25519_dalek::StaticSecret": {
+            "random": "ecdh_x25519_generatekey",
+            "diffie_hellman": "ecdh_computesecret"
+        },
+        "x25519_dalek::PublicKey": {
+            "from": "ecdh_x25519_generatekey"
+        },
+        "hkdf::Hkdf": {
+            "extract": "hkdf_extract",
+            "expand": "hkdf_expand",
+            "from_prk": "hkdf_key"
+        },
+        "des": {
+            "Des": "des_newcipher",
+            "TdesEde3": "des3_newcipher",
+            "TdesEde2": "des3_newcipher"
+        },
+        "rc4": {
+            "Rc4": "rc4_newcipher"
+        },
+        "chacha20poly1305::ChaCha20Poly1305": {
+            "new": "chacha20poly1305_new",
+            "encrypt": "chacha20poly1305_new",
+            "decrypt": "chacha20poly1305_new"
+        },
+        "chacha20poly1305::XChaCha20Poly1305": {
+            "new": "chacha20poly1305_newx"
+        },
+        "argon2::Argon2": {
+            "hash_password": "argon2id_key",
+            "hash_password_into": "argon2id_key",
+            "verify_password": "argon2id_key"
+        },
+        "scrypt": {
+            "scrypt": "scrypt_key",
+            "scrypt_simple": "scrypt_key"
+        }
     }
 }
