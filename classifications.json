@@ -1044,6 +1044,170 @@
             "primitive": "kdf",
             "materialSource": "derived"
         },
+        "bcrypt_hash": {
+            "algorithm": "bcrypt",
+            "algorithmFamily": "bcrypt",
+            "findingType": "kdf",
+            "assetType": "algorithm",
+            "operation": "keyderive",
+            "cryptoFunctions": [
+                "keyderive"
+            ],
+            "primitive": "kdf",
+            "materialSource": "derived"
+        },
+        "bcrypt_generate": {
+            "algorithm": "bcrypt",
+            "algorithmFamily": "bcrypt",
+            "findingType": "kdf",
+            "operation": "keyderive",
+            "primitive": "kdf",
+            "materialSource": "derived"
+        },
+        "bcrypt_compare": {
+            "algorithm": "bcrypt",
+            "algorithmFamily": "bcrypt",
+            "findingType": "kdf",
+            "operation": "verify",
+            "primitive": "kdf"
+        },
+        "blake2b_new": {
+            "algorithm": "BLAKE2b",
+            "algorithmFamily": "BLAKE2",
+            "findingType": "hash",
+            "assetType": "algorithm",
+            "operation": "hash",
+            "cryptoFunctions": [
+                "digest"
+            ],
+            "primitive": "hash",
+            "parameterSetIdentifier": "512",
+            "classicalSecurityLevel": 256
+        },
+        "blake2b_sum": {
+            "algorithm": "BLAKE2b",
+            "algorithmFamily": "BLAKE2",
+            "findingType": "hash",
+            "operation": "hash",
+            "primitive": "hash",
+            "parameterSetIdentifier": "512"
+        },
+        "blake2s_new": {
+            "algorithm": "BLAKE2s",
+            "algorithmFamily": "BLAKE2",
+            "findingType": "hash",
+            "assetType": "algorithm",
+            "operation": "hash",
+            "cryptoFunctions": [
+                "digest"
+            ],
+            "primitive": "hash",
+            "parameterSetIdentifier": "256",
+            "classicalSecurityLevel": 128
+        },
+        "blake2s_sum": {
+            "algorithm": "BLAKE2s",
+            "algorithmFamily": "BLAKE2",
+            "findingType": "hash",
+            "operation": "hash",
+            "primitive": "hash",
+            "parameterSetIdentifier": "256"
+        },
+        "blake3_new": {
+            "algorithm": "BLAKE3",
+            "algorithmFamily": "BLAKE3",
+            "findingType": "hash",
+            "assetType": "algorithm",
+            "operation": "hash",
+            "cryptoFunctions": [
+                "digest"
+            ],
+            "primitive": "hash",
+            "parameterSetIdentifier": "256",
+            "classicalSecurityLevel": 128
+        },
+        "blake3_sum": {
+            "algorithm": "BLAKE3",
+            "algorithmFamily": "BLAKE3",
+            "findingType": "hash",
+            "operation": "hash",
+            "primitive": "hash",
+            "parameterSetIdentifier": "256"
+        },
+        "blake3_keyed": {
+            "algorithm": "BLAKE3",
+            "algorithmFamily": "BLAKE3",
+            "findingType": "mac",
+            "operation": "sign",
+            "primitive": "mac",
+            "parameterSetIdentifier": "256"
+        },
+        "nacl_box_seal": {
+            "algorithm": "NaCl-Box",
+            "algorithmFamily": "NaCl",
+            "findingType": "cipher",
+            "operation": "encrypt",
+            "primitive": "pke",
+            "curve": "Curve25519"
+        },
+        "nacl_box_open": {
+            "algorithm": "NaCl-Box",
+            "algorithmFamily": "NaCl",
+            "findingType": "cipher",
+            "operation": "decrypt",
+            "primitive": "pke",
+            "curve": "Curve25519"
+        },
+        "nacl_box_generatekey": {
+            "algorithm": "NaCl-Box",
+            "algorithmFamily": "NaCl",
+            "findingType": "key_generation",
+            "operation": "keygen",
+            "primitive": "pke",
+            "curve": "Curve25519",
+            "materialSource": "generated"
+        },
+        "nacl_secretbox_seal": {
+            "algorithm": "NaCl-SecretBox",
+            "algorithmFamily": "NaCl",
+            "findingType": "aead",
+            "operation": "seal",
+            "primitive": "aead",
+            "keySize": 256
+        },
+        "nacl_secretbox_open": {
+            "algorithm": "NaCl-SecretBox",
+            "algorithmFamily": "NaCl",
+            "findingType": "aead",
+            "operation": "unseal",
+            "primitive": "aead",
+            "keySize": 256
+        },
+        "nacl_sign": {
+            "algorithm": "Ed25519",
+            "algorithmFamily": "EdDSA",
+            "findingType": "signature",
+            "operation": "sign",
+            "primitive": "signature",
+            "curve": "Ed25519"
+        },
+        "nacl_sign_open": {
+            "algorithm": "Ed25519",
+            "algorithmFamily": "EdDSA",
+            "findingType": "signature",
+            "operation": "verify",
+            "primitive": "signature",
+            "curve": "Ed25519"
+        },
+        "nacl_sign_generatekey": {
+            "algorithm": "Ed25519",
+            "algorithmFamily": "EdDSA",
+            "findingType": "key_generation",
+            "operation": "keygen",
+            "primitive": "signature",
+            "curve": "Ed25519",
+            "materialSource": "generated"
+        },
         "chacha20poly1305_new": {
             "algorithm": "ChaCha20-Poly1305",
             "algorithmFamily": "ChaCha20",

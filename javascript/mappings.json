@@ -172,6 +172,151 @@
         "scrypt": {
             "scrypt": "scrypt_key",
             "scryptSync": "scrypt_key"
+        },
+        "bcrypt": {
+            "hash": "bcrypt_hash",
+            "hashSync": "bcrypt_hash",
+            "compare": "bcrypt_compare",
+            "compareSync": "bcrypt_compare",
+            "genSalt": "bcrypt_generate",
+            "genSaltSync": "bcrypt_generate"
+        },
+        "bcryptjs": {
+            "hash": "bcrypt_hash",
+            "hashSync": "bcrypt_hash",
+            "compare": "bcrypt_compare",
+            "compareSync": "bcrypt_compare",
+            "genSalt": "bcrypt_generate",
+            "genSaltSync": "bcrypt_generate"
+        },
+        "tweetnacl": {
+            "box": "nacl_box_seal",
+            "secretbox": "nacl_secretbox_seal",
+            "sign": "nacl_sign",
+            "hash": "sha512_new",
+            "randomBytes": "rand_read"
+        },
+        "tweetnacl.box": {
+            "open": "nacl_box_open",
+            "keyPair": "nacl_box_generatekey",
+            "before": "nacl_box_seal"
+        },
+        "tweetnacl.secretbox": {
+            "open": "nacl_secretbox_open"
+        },
+        "tweetnacl.sign": {
+            "open": "nacl_sign_open",
+            "keyPair": "nacl_sign_generatekey",
+            "detached": "nacl_sign"
+        },
+        "tweetnacl.sign.detached": {
+            "verify": "nacl_sign_open"
+        },
+        "node-forge": {
+            "md": "sha256_new",
+            "cipher": "aes_newcipher",
+            "hmac": "hmac_new",
+            "pki": "rsa_generatekey",
+            "random": "rand_read",
+            "util": "subtle_constanttimecompare"
+        },
+        "forge": {
+            "md": "sha256_new",
+            "cipher": "aes_newcipher",
+            "hmac": "hmac_new",
+            "pki": "rsa_generatekey",
+            "random": "rand_read",
+            "util": "subtle_constanttimecompare"
+        },
+        "forge.md.sha256": {
+            "create": "sha256_new"
+        },
+        "forge.md.sha512": {
+            "create": "sha512_new"
+        },
+        "forge.md.sha1": {
+            "create": "sha1_new"
+        },
+        "forge.md.md5": {
+            "create": "md5_new"
+        },
+        "forge.cipher": {
+            "createCipher": "aes_newcipher",
+            "createDecipher": "aes_newcipher"
+        },
+        "forge.hmac": {
+            "create": "hmac_new"
+        },
+        "forge.pki": {
+            "rsa": "rsa_generatekey",
+            "certificateFromPem": "x509_parsecertificate",
+            "certificateToPem": "x509_createcertificate",
+            "privateKeyFromPem": "x509_parsepkcs1privatekey",
+            "privateKeyToPem": "x509_marshalpkcs1privatekey",
+            "publicKeyFromPem": "x509_parsepkcs1publickey",
+            "publicKeyToPem": "x509_marshalpkcs1publickey"
+        },
+        "forge.pki.rsa": {
+            "generateKeyPair": "rsa_generatekey"
+        },
+        "forge.random": {
+            "getBytesSync": "rand_read",
+            "getBytes": "rand_read"
+        },
+        "forge.pkcs5": {
+            "pbkdf2": "pbkdf2_key"
+        },
+        "crypto-js": {
+            "SHA256": "sha256_new",
+            "SHA512": "sha512_new",
+            "SHA1": "sha1_new",
+            "SHA3": "sha3_new256",
+            "MD5": "md5_new",
+            "HmacSHA256": "hmac_new",
+            "HmacSHA512": "hmac_new",
+            "AES": "aes_newcipher",
+            "DES": "des_newcipher",
+            "TripleDES": "des3_newcipher",
+            "RC4": "rc4_newcipher",
+            "PBKDF2": "pbkdf2_key"
+        },
+        "crypto-js.AES": {
+            "encrypt": "aes_encrypt",
+            "decrypt": "aes_decrypt"
+        },
+        "jose": {
+            "SignJWT": "ecdsa_sign",
+            "jwtVerify": "ecdsa_verify",
+            "CompactEncrypt": "aes_encrypt",
+            "compactDecrypt": "aes_decrypt",
+            "generateKeyPair": "rsa_generatekey",
+            "generateSecret": "rand_read"
+        },
+        "jsonwebtoken": {
+            "sign": "hmac_new",
+            "verify": "hmac_equal",
+            "decode": "hmac_new"
+        },
+        "blake2": {
+            "createHash": "blake2b_new"
+        },
+        "blakejs": {
+            "blake2b": "blake2b_new",
+            "blake2s": "blake2s_new",
+            "blake2bHex": "blake2b_sum",
+            "blake2sHex": "blake2s_sum"
+        },
+        "blake3": {
+            "hash": "blake3_new",
+            "keyedHash": "blake3_keyed"
+        },
+        "crypto.subtle": {
+            "generateKey": "aes_newcipher",
+            "importKey": "aes_newcipher",
+            "exportKey": "aes_newcipher",
+            "wrapKey": "aes_encrypt",
+            "unwrapKey": "aes_decrypt",
+            "deriveBits": "pbkdf2_key"
         }
     }
 }

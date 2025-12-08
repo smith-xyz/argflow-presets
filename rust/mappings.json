@@ -259,6 +259,137 @@
         "scrypt": {
             "scrypt": "scrypt_key",
             "scrypt_simple": "scrypt_key"
+        },
+        "bcrypt": {
+            "hash": "bcrypt_hash",
+            "verify": "bcrypt_compare",
+            "DEFAULT_COST": "bcrypt_generate"
+        },
+        "blake2::Blake2b": {
+            "new": "blake2b_new",
+            "finalize": "blake2b_sum"
+        },
+        "blake2::Blake2s": {
+            "new": "blake2s_new",
+            "finalize": "blake2s_sum"
+        },
+        "blake3": {
+            "hash": "blake3_new",
+            "keyed_hash": "blake3_keyed",
+            "derive_key": "blake3_keyed"
+        },
+        "blake3::Hasher": {
+            "new": "blake3_new",
+            "new_keyed": "blake3_keyed",
+            "new_derive_key": "blake3_keyed",
+            "finalize": "blake3_sum"
+        },
+        "sodiumoxide::crypto::box_": {
+            "seal": "nacl_box_seal",
+            "open": "nacl_box_open",
+            "gen_keypair": "nacl_box_generatekey"
+        },
+        "sodiumoxide::crypto::secretbox": {
+            "seal": "nacl_secretbox_seal",
+            "open": "nacl_secretbox_open"
+        },
+        "sodiumoxide::crypto::sign": {
+            "sign": "nacl_sign",
+            "verify": "nacl_sign_open",
+            "gen_keypair": "nacl_sign_generatekey"
+        },
+        "sodiumoxide::crypto::hash": {
+            "sha256": "sha256_new",
+            "sha512": "sha512_new"
+        },
+        "sodiumoxide::crypto::pwhash": {
+            "pwhash": "argon2id_key",
+            "pwhash_verify": "argon2id_key"
+        },
+        "openssl::hash": {
+            "hash": "sha256_sum",
+            "Hasher": "sha256_new",
+            "MessageDigest": "sha256_new"
+        },
+        "openssl::hash::MessageDigest": {
+            "sha256": "sha256_new",
+            "sha512": "sha512_new",
+            "sha1": "sha1_new",
+            "md5": "md5_new",
+            "sha3_256": "sha3_new256",
+            "sha3_512": "sha3_new512"
+        },
+        "openssl::symm": {
+            "Cipher": "aes_newcipher",
+            "encrypt": "aes_encrypt",
+            "decrypt": "aes_decrypt",
+            "encrypt_aead": "cipher_seal",
+            "decrypt_aead": "cipher_open"
+        },
+        "openssl::symm::Cipher": {
+            "aes_128_cbc": "cipher_newcbcencrypter_aes",
+            "aes_256_cbc": "cipher_newcbcencrypter_aes",
+            "aes_128_gcm": "cipher_newgcm",
+            "aes_256_gcm": "cipher_newgcm",
+            "aes_128_ctr": "cipher_newctr_aes",
+            "aes_256_ctr": "cipher_newctr_aes",
+            "chacha20_poly1305": "chacha20poly1305_new",
+            "des_cbc": "cipher_newcbcencrypter_des",
+            "des_ede3_cbc": "cipher_newcbcencrypter_des3"
+        },
+        "openssl::rsa": {
+            "Rsa": "rsa_generatekey"
+        },
+        "openssl::rsa::Rsa": {
+            "generate": "rsa_generatekey",
+            "public_key_from_pem": "x509_parsepkcs1publickey",
+            "private_key_from_pem": "x509_parsepkcs1privatekey"
+        },
+        "openssl::ec": {
+            "EcKey": "ecdsa_generatekey"
+        },
+        "openssl::ec::EcKey": {
+            "generate": "ecdsa_generatekey"
+        },
+        "openssl::pkey": {
+            "PKey": "rsa_generatekey"
+        },
+        "openssl::pkey::PKey": {
+            "generate_rsa": "rsa_generatekey",
+            "generate_ec": "ecdsa_generatekey",
+            "generate_ed25519": "ed25519_generatekey"
+        },
+        "openssl::sign": {
+            "Signer": "rsa_signpkcs1v15",
+            "Verifier": "rsa_verifypkcs1v15"
+        },
+        "openssl::pkcs5": {
+            "pbkdf2_hmac": "pbkdf2_key",
+            "scrypt": "scrypt_key"
+        },
+        "openssl::rand": {
+            "rand_bytes": "rand_read"
+        },
+        "openssl::ssl": {
+            "SslMethod": "tls_client",
+            "SslConnector": "tls_client",
+            "SslAcceptor": "tls_server"
+        },
+        "openssl::ssl::SslMethod": {
+            "tls": "tls_version_tls12",
+            "tls_client": "tls_client",
+            "tls_server": "tls_server"
+        },
+        "openssl::ssl::SslVersion": {
+            "TLS1_2": "tls_version_tls12",
+            "TLS1_3": "tls_version_tls13"
+        },
+        "openssl::x509": {
+            "X509": "x509_parsecertificate"
+        },
+        "openssl::x509::X509": {
+            "from_pem": "x509_parsecertificate",
+            "from_der": "x509_parsecertificate"
         }
     }
 }

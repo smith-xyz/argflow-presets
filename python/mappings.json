@@ -211,6 +211,153 @@
             "SSLContext": "tls_server",
             "create_default_context": "tls_client",
             "wrap_socket": "tls_dial"
+        },
+        "bcrypt": {
+            "hashpw": "bcrypt_hash",
+            "gensalt": "bcrypt_generate",
+            "checkpw": "bcrypt_compare",
+            "kdf": "bcrypt_hash"
+        },
+        "hashlib.blake2b": {
+            "hexdigest": "blake2b_sum",
+            "digest": "blake2b_sum"
+        },
+        "hashlib.blake2s": {
+            "hexdigest": "blake2s_sum",
+            "digest": "blake2s_sum"
+        },
+        "nacl.public": {
+            "PrivateKey": "nacl_box_generatekey",
+            "PublicKey": "nacl_box_generatekey",
+            "Box": "nacl_box_seal"
+        },
+        "nacl.public.Box": {
+            "encrypt": "nacl_box_seal",
+            "decrypt": "nacl_box_open"
+        },
+        "nacl.public.PrivateKey": {
+            "generate": "nacl_box_generatekey"
+        },
+        "nacl.secret": {
+            "SecretBox": "nacl_secretbox_seal"
+        },
+        "nacl.secret.SecretBox": {
+            "encrypt": "nacl_secretbox_seal",
+            "decrypt": "nacl_secretbox_open"
+        },
+        "nacl.signing": {
+            "SigningKey": "nacl_sign_generatekey",
+            "VerifyKey": "nacl_sign_open"
+        },
+        "nacl.signing.SigningKey": {
+            "sign": "nacl_sign",
+            "generate": "nacl_sign_generatekey"
+        },
+        "nacl.signing.VerifyKey": {
+            "verify": "nacl_sign_open"
+        },
+        "nacl.hash": {
+            "sha256": "sha256_new",
+            "sha512": "sha512_new",
+            "blake2b": "blake2b_new"
+        },
+        "nacl.pwhash": {
+            "argon2id": "argon2id_key",
+            "argon2i": "argon2_key",
+            "scrypt": "scrypt_key"
+        },
+        "Crypto.Hash.SHA256": {
+            "new": "sha256_new",
+            "digest": "sha256_sum"
+        },
+        "Crypto.Hash.SHA512": {
+            "new": "sha512_new",
+            "digest": "sha512_sum"
+        },
+        "Crypto.Hash.SHA1": {
+            "new": "sha1_new",
+            "digest": "sha1_sum"
+        },
+        "Crypto.Hash.MD5": {
+            "new": "md5_new",
+            "digest": "md5_sum"
+        },
+        "Crypto.Hash.SHA3_256": {
+            "new": "sha3_new256"
+        },
+        "Crypto.Hash.SHA3_512": {
+            "new": "sha3_new512"
+        },
+        "Crypto.Hash.BLAKE2b": {
+            "new": "blake2b_new",
+            "digest": "blake2b_sum"
+        },
+        "Crypto.Hash.BLAKE2s": {
+            "new": "blake2s_new",
+            "digest": "blake2s_sum"
+        },
+        "Crypto.Hash.HMAC": {
+            "new": "hmac_new",
+            "digest": "hmac_new"
+        },
+        "Crypto.Cipher.AES": {
+            "new": "aes_newcipher",
+            "encrypt": "aes_encrypt",
+            "decrypt": "aes_decrypt"
+        },
+        "Crypto.Cipher.DES": {
+            "new": "des_newcipher"
+        },
+        "Crypto.Cipher.DES3": {
+            "new": "des3_newcipher"
+        },
+        "Crypto.Cipher.ChaCha20": {
+            "new": "chacha20poly1305_new"
+        },
+        "Crypto.Cipher.ChaCha20_Poly1305": {
+            "new": "chacha20poly1305_new"
+        },
+        "Crypto.PublicKey.RSA": {
+            "generate": "rsa_generatekey",
+            "import_key": "x509_parsepkcs1privatekey"
+        },
+        "Crypto.PublicKey.ECC": {
+            "generate": "ecdsa_generatekey",
+            "import_key": "x509_parseecprivatekey"
+        },
+        "Crypto.Signature.pkcs1_15": {
+            "new": "rsa_signpkcs1v15"
+        },
+        "Crypto.Signature.pss": {
+            "new": "rsa_signpss"
+        },
+        "Crypto.Signature.DSS": {
+            "new": "ecdsa_sign"
+        },
+        "Crypto.Protocol.KDF": {
+            "PBKDF2": "pbkdf2_key",
+            "scrypt": "scrypt_key",
+            "HKDF": "hkdf_key",
+            "bcrypt": "bcrypt_hash"
+        },
+        "Crypto.Random": {
+            "get_random_bytes": "rand_read",
+            "random": "rand_int"
+        },
+        "cryptography.fernet": {
+            "Fernet": "aes_newcipher"
+        },
+        "cryptography.fernet.Fernet": {
+            "encrypt": "aes_encrypt",
+            "decrypt": "aes_decrypt",
+            "generate_key": "rand_read"
+        },
+        "blake3": {
+            "blake3": "blake3_new"
+        },
+        "blake3.blake3": {
+            "digest": "blake3_sum",
+            "hexdigest": "blake3_sum"
         }
     }
 }

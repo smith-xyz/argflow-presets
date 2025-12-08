@@ -115,11 +115,11 @@
             "Client": "tls_client",
             "LoadX509KeyPair": "tls_loadx509keypair",
             "X509KeyPair": "tls_x509keypair",
-            "Version_SSL30": "tls_version_ssl30",
-            "Version_TLS10": "tls_version_tls10",
-            "Version_TLS11": "tls_version_tls11",
-            "Version_TLS12": "tls_version_tls12",
-            "Version_TLS13": "tls_version_tls13"
+            "VersionSSL30": "tls_version_ssl30",
+            "VersionTLS10": "tls_version_tls10",
+            "VersionTLS11": "tls_version_tls11",
+            "VersionTLS12": "tls_version_tls12",
+            "VersionTLS13": "tls_version_tls13"
         },
         "crypto/des": {
             "NewCipher": "des_newcipher",
@@ -185,6 +185,94 @@
         "golang.org/x/crypto/curve25519": {
             "ScalarMult": "x25519_scalarmult",
             "X25519": "x25519_x25519"
+        },
+        "golang.org/x/crypto/bcrypt": {
+            "GenerateFromPassword": "bcrypt_generate",
+            "CompareHashAndPassword": "bcrypt_compare",
+            "Cost": "bcrypt_hash"
+        },
+        "golang.org/x/crypto/blake2b": {
+            "New256": "blake2b_new",
+            "New384": "blake2b_new",
+            "New512": "blake2b_new",
+            "Sum256": "blake2b_sum",
+            "Sum384": "blake2b_sum",
+            "Sum512": "blake2b_sum",
+            "New": "blake2b_new"
+        },
+        "golang.org/x/crypto/blake2s": {
+            "New256": "blake2s_new",
+            "New128": "blake2s_new",
+            "Sum256": "blake2s_sum",
+            "New": "blake2s_new"
+        },
+        "github.com/zeebo/blake3": {
+            "New": "blake3_new",
+            "Sum256": "blake3_sum",
+            "Sum512": "blake3_sum",
+            "DeriveKey": "blake3_keyed"
+        },
+        "golang.org/x/crypto/nacl/box": {
+            "Seal": "nacl_box_seal",
+            "Open": "nacl_box_open",
+            "GenerateKey": "nacl_box_generatekey",
+            "Precompute": "nacl_box_seal"
+        },
+        "golang.org/x/crypto/nacl/secretbox": {
+            "Seal": "nacl_secretbox_seal",
+            "Open": "nacl_secretbox_open"
+        },
+        "golang.org/x/crypto/nacl/sign": {
+            "Sign": "nacl_sign",
+            "Open": "nacl_sign_open",
+            "GenerateKey": "nacl_sign_generatekey"
+        }
+    },
+    "struct_fields": {
+        "crypto/tls.Config": {
+            "MinVersion": "tls_config_min_version",
+            "MaxVersion": "tls_config_max_version",
+            "CipherSuites": "tls_config_cipher_suites",
+            "CurvePreferences": "tls_config_curve_preferences",
+            "InsecureSkipVerify": "tls_config_insecure_skip_verify",
+            "ClientAuth": "tls_config_client_auth",
+            "Certificates": "tls_config_certificates",
+            "RootCAs": "tls_config_root_cas",
+            "ClientCAs": "tls_config_client_cas"
+        },
+        "crypto/x509.Certificate": {
+            "SignatureAlgorithm": "x509_cert_signature_algorithm",
+            "PublicKeyAlgorithm": "x509_cert_public_key_algorithm",
+            "KeyUsage": "x509_cert_key_usage"
+        }
+    },
+    "constants": {
+        "crypto/tls": {
+            "VersionSSL30": {
+                "value": 768,
+                "protocol": "SSL",
+                "version": "3.0"
+            },
+            "VersionTLS10": {
+                "value": 769,
+                "protocol": "TLS",
+                "version": "1.0"
+            },
+            "VersionTLS11": {
+                "value": 770,
+                "protocol": "TLS",
+                "version": "1.1"
+            },
+            "VersionTLS12": {
+                "value": 771,
+                "protocol": "TLS",
+                "version": "1.2"
+            },
+            "VersionTLS13": {
+                "value": 772,
+                "protocol": "TLS",
+                "version": "1.3"
+            }
         }
     }
 }
