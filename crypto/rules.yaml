@@ -1,0 +1,2328 @@
+version: '1.0'
+classifications:
+  pbkdf2_key:
+    algorithm: PBKDF2
+    algorithmFamily: PBKDF2
+    findingType: kdf
+    assetType: algorithm
+    operation: keyderive
+    cryptoFunctions:
+    - keyderive
+    primitive: kdf
+    materialSource: derived
+  sha256_new:
+    algorithm: SHA-256
+    algorithmFamily: SHA-2
+    findingType: hash
+    assetType: algorithm
+    operation: hash
+    cryptoFunctions:
+    - digest
+    primitive: hash
+    parameterSetIdentifier: '256'
+    classicalSecurityLevel: 128
+  sha256_sum:
+    algorithm: SHA-256
+    algorithmFamily: SHA-2
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '256'
+  sha256_sum256:
+    algorithm: SHA-256
+    algorithmFamily: SHA-2
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '256'
+  sha512_new:
+    algorithm: SHA-512
+    algorithmFamily: SHA-2
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '512'
+  sha512_sum:
+    algorithm: SHA-512
+    algorithmFamily: SHA-2
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '512'
+  sha384_new:
+    algorithm: SHA-384
+    algorithmFamily: SHA-2
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '384'
+  sha384_sum:
+    algorithm: SHA-384
+    algorithmFamily: SHA-2
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '384'
+  sha224_new:
+    algorithm: SHA-224
+    algorithmFamily: SHA-2
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '224'
+  sha224_sum:
+    algorithm: SHA-224
+    algorithmFamily: SHA-2
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '224'
+  sha1_new:
+    algorithm: SHA-1
+    algorithmFamily: SHA-1
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '160'
+  sha1_sum:
+    algorithm: SHA-1
+    algorithmFamily: SHA-1
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '160'
+  md5_new:
+    algorithm: MD5
+    algorithmFamily: MD5
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '128'
+  md5_sum:
+    algorithm: MD5
+    algorithmFamily: MD5
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '128'
+  aes_newcipher:
+    algorithm: AES
+    algorithmFamily: AES
+    findingType: cipher
+    assetType: algorithm
+    operation: keygen
+    cryptoFunctions:
+    - keygen
+    primitive: block-cipher
+    blockSize: 128
+    materialSource: generated
+  aes_encrypt:
+    algorithm: AES
+    algorithmFamily: AES
+    findingType: cipher
+    operation: encrypt
+    primitive: block-cipher
+    blockSize: 128
+  aes_decrypt:
+    algorithm: AES
+    algorithmFamily: AES
+    findingType: cipher
+    operation: decrypt
+    primitive: block-cipher
+    blockSize: 128
+  ecdsa_sign:
+    algorithm: ECDSA
+    algorithmFamily: ECDSA
+    findingType: signature
+    operation: sign
+    primitive: signature
+  ecdsa_verify:
+    algorithm: ECDSA
+    algorithmFamily: ECDSA
+    findingType: signature
+    operation: verify
+    primitive: signature
+  ecdsa_generatekey:
+    algorithm: ECDSA
+    algorithmFamily: ECDSA
+    findingType: key_generation
+    operation: keygen
+    primitive: signature
+    materialSource: generated
+  ecdsa_signasn1:
+    algorithm: ECDSA
+    algorithmFamily: ECDSA
+    findingType: signature
+    operation: sign
+    primitive: signature
+  ecdsa_verifyasn1:
+    algorithm: ECDSA
+    algorithmFamily: ECDSA
+    findingType: signature
+    operation: verify
+    primitive: signature
+  elliptic_p256:
+    algorithm: ECDSA
+    algorithmFamily: ECDSA
+    findingType: signature
+    operation: keygen
+    primitive: signature
+    curve: P256
+    parameterSetIdentifier: P256
+  elliptic_p384:
+    algorithm: ECDSA
+    algorithmFamily: ECDSA
+    findingType: signature
+    operation: keygen
+    primitive: signature
+    curve: P384
+    parameterSetIdentifier: P384
+  elliptic_p521:
+    algorithm: ECDSA
+    algorithmFamily: ECDSA
+    findingType: signature
+    operation: keygen
+    primitive: signature
+    curve: P521
+    parameterSetIdentifier: P521
+  hmac_new:
+    algorithm: HMAC
+    algorithmFamily: HMAC
+    findingType: mac
+    operation: sign
+    primitive: mac
+  hmac_equal:
+    algorithm: HMAC
+    algorithmFamily: HMAC
+    findingType: mac
+    operation: verify
+    primitive: mac
+  rsa_generatekey:
+    algorithm: RSA
+    algorithmFamily: RSA
+    findingType: key_generation
+    operation: keygen
+    primitive: pke
+    materialSource: generated
+  rsa_generatemultiprimekey:
+    algorithm: RSA
+    algorithmFamily: RSA
+    findingType: key_generation
+    operation: keygen
+    primitive: pke
+    materialSource: generated
+  rsa_encryptpkcs1v15:
+    algorithm: RSA
+    algorithmFamily: RSA
+    findingType: cipher
+    operation: encrypt
+    primitive: pke
+    padding: PKCS1v15
+  rsa_encryptoaep:
+    algorithm: RSA-OAEP
+    algorithmFamily: RSA
+    findingType: cipher
+    operation: encrypt
+    primitive: pke
+    padding: OAEP
+  rsa_decryptpkcs1v15sessionkey:
+    algorithm: RSA
+    algorithmFamily: RSA
+    findingType: cipher
+    operation: decrypt
+    primitive: pke
+    padding: PKCS1v15
+  rsa_decryptoaep:
+    algorithm: RSA-OAEP
+    algorithmFamily: RSA
+    findingType: cipher
+    operation: decrypt
+    primitive: pke
+    padding: OAEP
+  rsa_signpkcs1v15:
+    algorithm: RSA-PKCS1v15
+    algorithmFamily: RSA
+    findingType: signature
+    operation: sign
+    primitive: signature
+    padding: PKCS1v15
+  rsa_signpss:
+    algorithm: RSA-PSS
+    algorithmFamily: RSA
+    findingType: signature
+    operation: sign
+    primitive: signature
+    padding: PSS
+  rsa_verifypkcs1v15:
+    algorithm: RSA-PKCS1v15
+    algorithmFamily: RSA
+    findingType: signature
+    operation: verify
+    primitive: signature
+    padding: PKCS1v15
+  rsa_verifypss:
+    algorithm: RSA-PSS
+    algorithmFamily: RSA
+    findingType: signature
+    operation: verify
+    primitive: signature
+    padding: PSS
+  ed25519_generatekey:
+    algorithm: Ed25519
+    algorithmFamily: EdDSA
+    findingType: key_generation
+    operation: keygen
+    primitive: signature
+    curve: Ed25519
+    parameterSetIdentifier: Ed25519
+    materialSource: generated
+  ed25519_newkeyfromseed:
+    algorithm: Ed25519
+    algorithmFamily: EdDSA
+    findingType: key_generation
+    operation: keygen
+    primitive: signature
+    curve: Ed25519
+    parameterSetIdentifier: Ed25519
+    materialSource: derived
+  ed25519_sign:
+    algorithm: Ed25519
+    algorithmFamily: EdDSA
+    findingType: signature
+    operation: sign
+    primitive: signature
+    curve: Ed25519
+    parameterSetIdentifier: Ed25519
+  ed25519_verify:
+    algorithm: Ed25519
+    algorithmFamily: EdDSA
+    findingType: signature
+    operation: verify
+    primitive: signature
+    curve: Ed25519
+    parameterSetIdentifier: Ed25519
+  ed25519_verifywithoptions:
+    algorithm: Ed25519
+    algorithmFamily: EdDSA
+    findingType: signature
+    operation: verify
+    primitive: signature
+    curve: Ed25519
+    parameterSetIdentifier: Ed25519
+  ed25519_publickey:
+    algorithm: Ed25519
+    algorithmFamily: EdDSA
+    findingType: key_generation
+    operation: keygen
+    primitive: signature
+    curve: Ed25519
+    parameterSetIdentifier: Ed25519
+  ed25519_privatekey:
+    algorithm: Ed25519
+    algorithmFamily: EdDSA
+    findingType: key_generation
+    operation: keygen
+    primitive: signature
+    curve: Ed25519
+    parameterSetIdentifier: Ed25519
+  x509_newcertpool:
+    algorithm: X.509
+    algorithmFamily: X.509
+    findingType: certificate
+    operation: other
+    primitive: certificate
+    certificateFormat: X.509
+    certificateType: certificate
+  x509_parsecertificate:
+    algorithm: X.509
+    algorithmFamily: X.509
+    findingType: certificate
+    assetType: certificate
+    operation: other
+    cryptoFunctions:
+    - verify
+    primitive: certificate
+    certificateFormat: X.509
+    certificateType: certificate
+    materialSource: loaded
+  x509_parsecertificates:
+    algorithm: X.509
+    algorithmFamily: X.509
+    findingType: certificate
+    operation: other
+    primitive: certificate
+    certificateFormat: X.509
+    certificateType: certificate
+    materialSource: loaded
+  x509_createcertificate:
+    algorithm: X.509
+    algorithmFamily: X.509
+    findingType: certificate
+    operation: other
+    primitive: certificate
+    certificateFormat: X.509
+    certificateType: certificate
+    materialSource: generated
+  x509_createcertificaterequest:
+    algorithm: X.509
+    algorithmFamily: X.509
+    findingType: certificate
+    operation: other
+    primitive: certificate
+    certificateFormat: X.509
+    certificateType: certificate-request
+    materialSource: generated
+  x509_parsecertificaterequest:
+    algorithm: X.509
+    algorithmFamily: X.509
+    findingType: certificate
+    operation: other
+    primitive: certificate
+    certificateFormat: X.509
+    certificateType: certificate-request
+    materialSource: loaded
+  x509_parsepkcs1privatekey:
+    algorithm: RSA
+    algorithmFamily: RSA
+    findingType: key_generation
+    operation: keygen
+    primitive: pke
+    certificateFormat: PKCS1
+    materialSource: loaded
+  x509_parsepkcs1publickey:
+    algorithm: RSA
+    algorithmFamily: RSA
+    findingType: key_generation
+    operation: keygen
+    primitive: pke
+    certificateFormat: PKCS1
+    materialSource: loaded
+  x509_marshalpkcs1privatekey:
+    algorithm: RSA
+    algorithmFamily: RSA
+    findingType: key_generation
+    operation: keygen
+    primitive: pke
+    certificateFormat: PKCS1
+    materialSource: generated
+  x509_marshalpkcs1publickey:
+    algorithm: RSA
+    algorithmFamily: RSA
+    findingType: key_generation
+    operation: keygen
+    primitive: pke
+    certificateFormat: PKCS1
+    materialSource: generated
+  x509_parseecprivatekey:
+    algorithm: ECDSA
+    algorithmFamily: ECDSA
+    findingType: key_generation
+    operation: keygen
+    primitive: signature
+    certificateFormat: X.509
+    materialSource: loaded
+  x509_marshalecprivatekey:
+    algorithm: ECDSA
+    algorithmFamily: ECDSA
+    findingType: key_generation
+    operation: keygen
+    primitive: signature
+    certificateFormat: X.509
+    materialSource: generated
+  x509_parsepkcs8privatekey:
+    findingType: key_generation
+    operation: keygen
+    certificateFormat: PKCS8
+    materialSource: loaded
+  x509_marshalpkcs8privatekey:
+    findingType: key_generation
+    operation: keygen
+    certificateFormat: PKCS8
+    materialSource: generated
+  x509_parsepkixpublickey:
+    findingType: key_generation
+    operation: keygen
+    certificateFormat: PKIX
+    materialSource: loaded
+  x509_marshalpkixpublickey:
+    findingType: key_generation
+    operation: keygen
+    certificateFormat: PKIX
+    materialSource: generated
+  x509_parsedercrl:
+    algorithm: X.509
+    algorithmFamily: X.509
+    findingType: certificate
+    operation: other
+    primitive: certificate
+    certificateFormat: X.509
+    certificateType: crl
+    materialSource: loaded
+  x509_parsecrl:
+    algorithm: X.509
+    algorithmFamily: X.509
+    findingType: certificate
+    operation: other
+    primitive: certificate
+    certificateFormat: X.509
+    certificateType: crl
+    materialSource: loaded
+  x509_createrevocationlist:
+    algorithm: X.509
+    algorithmFamily: X.509
+    findingType: certificate
+    operation: other
+    primitive: certificate
+    certificateFormat: X.509
+    certificateType: crl
+    materialSource: generated
+  x509_parserevocationlist:
+    algorithm: X.509
+    algorithmFamily: X.509
+    findingType: certificate
+    operation: other
+    primitive: certificate
+    certificateFormat: X.509
+    certificateType: crl
+    materialSource: loaded
+  x509_decryptpemblock:
+    findingType: key_generation
+    operation: keygen
+    certificateFormat: PEM
+    materialSource: loaded
+  x509_encryptpemblock:
+    findingType: key_generation
+    operation: keygen
+    certificateFormat: PEM
+    materialSource: generated
+  x509_isencryptedpemblock:
+    findingType: key_generation
+    operation: other
+    certificateFormat: PEM
+  x509_certificate_verify:
+    algorithm: X.509
+    algorithmFamily: X.509
+    findingType: certificate
+    operation: verify
+    primitive: certificate
+    certificateFormat: X.509
+    certificateType: certificate
+  x509_certificate_checksignature:
+    findingType: certificate
+    operation: verify
+    primitive: certificate
+    certificateFormat: X.509
+    certificateType: certificate
+  x509_certificate_checksignaturefrom:
+    algorithm: X.509
+    algorithmFamily: X.509
+    findingType: certificate
+    operation: verify
+    primitive: certificate
+    certificateFormat: X.509
+    certificateType: certificate
+  x509_certificate_checkcrlsignature:
+    algorithm: X.509
+    algorithmFamily: X.509
+    findingType: certificate
+    operation: verify
+    primitive: certificate
+    certificateFormat: X.509
+    certificateType: crl
+  subtle_constanttimecompare:
+    algorithm: ConstantTimeCompare
+    algorithmFamily: utility
+    findingType: utility
+    operation: other
+    primitive: utility
+  tls_dial:
+    algorithm: TLS
+    algorithmFamily: TLS
+    findingType: protocol
+    assetType: protocol
+    operation: keyexchange
+    cryptoFunctions:
+    - keygen
+    - encrypt
+    - decrypt
+    - sign
+    - verify
+    primitive: protocol
+    protocolName: TLS
+    protocolType: tls
+  tls_listen:
+    algorithm: TLS
+    algorithmFamily: TLS
+    findingType: protocol
+    operation: keyexchange
+    primitive: protocol
+    protocolName: TLS
+    protocolType: tls
+  tls_server:
+    algorithm: TLS
+    algorithmFamily: TLS
+    findingType: protocol
+    operation: keyexchange
+    primitive: protocol
+    protocolName: TLS
+    protocolType: tls
+  tls_client:
+    algorithm: TLS
+    algorithmFamily: TLS
+    findingType: protocol
+    operation: keyexchange
+    primitive: protocol
+    protocolName: TLS
+    protocolType: tls
+  tls_loadx509keypair:
+    algorithm: X.509
+    algorithmFamily: X.509
+    findingType: certificate
+    operation: other
+    primitive: certificate
+    certificateFormat: X.509
+    certificateType: certificate
+    materialSource: loaded
+  tls_x509keypair:
+    algorithm: X.509
+    algorithmFamily: X.509
+    findingType: certificate
+    operation: other
+    primitive: certificate
+    certificateFormat: X.509
+    certificateType: certificate
+    materialSource: loaded
+  tls_version_ssl30:
+    algorithm: TLS
+    algorithmFamily: TLS
+    findingType: protocol
+    operation: keyexchange
+    primitive: protocol
+    protocolName: SSL
+    protocolType: ssl
+    protocolVersion: '3.0'
+  tls_version_tls10:
+    algorithm: TLS
+    algorithmFamily: TLS
+    findingType: protocol
+    operation: keyexchange
+    primitive: protocol
+    protocolName: TLS
+    protocolType: tls
+    protocolVersion: '1.0'
+  tls_version_tls11:
+    algorithm: TLS
+    algorithmFamily: TLS
+    findingType: protocol
+    operation: keyexchange
+    primitive: protocol
+    protocolName: TLS
+    protocolType: tls
+    protocolVersion: '1.1'
+  tls_version_tls12:
+    algorithm: TLS
+    algorithmFamily: TLS
+    findingType: protocol
+    operation: keyexchange
+    primitive: protocol
+    protocolName: TLS
+    protocolType: tls
+    protocolVersion: '1.2'
+  tls_version_tls13:
+    algorithm: TLS
+    algorithmFamily: TLS
+    findingType: protocol
+    operation: keyexchange
+    primitive: protocol
+    protocolName: TLS
+    protocolType: tls
+    protocolVersion: '1.3'
+  cipher_seal:
+    findingType: aead
+    operation: seal
+    primitive: aead
+  cipher_open:
+    findingType: aead
+    operation: unseal
+    primitive: aead
+  cipher_newgcm:
+    algorithm: AES-GCM
+    algorithmFamily: AES
+    findingType: aead
+    operation: encrypt
+    primitive: aead
+    mode: GCM
+    nonceSize: 12
+    tagSize: 16
+  des_newcipher:
+    algorithm: DES
+    algorithmFamily: DES
+    findingType: cipher
+    operation: keygen
+    primitive: block-cipher
+    keySize: 56
+    blockSize: 64
+    materialSource: generated
+  des3_newcipher:
+    algorithm: 3DES
+    algorithmFamily: 3DES
+    findingType: cipher
+    operation: keygen
+    primitive: block-cipher
+    keySize: 168
+    blockSize: 64
+    materialSource: generated
+  dsa_generateparameters:
+    algorithm: DSA
+    algorithmFamily: DSA
+    findingType: key_generation
+    operation: keygen
+    primitive: signature
+    materialSource: generated
+  dsa_generatekey:
+    algorithm: DSA
+    algorithmFamily: DSA
+    findingType: key_generation
+    operation: keygen
+    primitive: signature
+    materialSource: generated
+  dsa_sign:
+    algorithm: DSA
+    algorithmFamily: DSA
+    findingType: signature
+    operation: sign
+    primitive: signature
+  dsa_verify:
+    algorithm: DSA
+    algorithmFamily: DSA
+    findingType: signature
+    operation: verify
+    primitive: signature
+  rc4_newcipher:
+    algorithm: RC4
+    algorithmFamily: RC4
+    findingType: cipher
+    operation: encrypt
+    primitive: stream-cipher
+    materialSource: generated
+  sha3_new224:
+    algorithm: SHA-3-224
+    algorithmFamily: SHA-3
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '224'
+  sha3_new256:
+    algorithm: SHA-3-256
+    algorithmFamily: SHA-3
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '256'
+  sha3_new384:
+    algorithm: SHA-3-384
+    algorithmFamily: SHA-3
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '384'
+  sha3_new512:
+    algorithm: SHA-3-512
+    algorithmFamily: SHA-3
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '512'
+  sha3_shake128:
+    algorithm: SHAKE128
+    algorithmFamily: SHA-3
+    findingType: hash
+    operation: hash
+    primitive: xof
+    parameterSetIdentifier: SHAKE128
+  sha3_shake256:
+    algorithm: SHAKE256
+    algorithmFamily: SHA-3
+    findingType: hash
+    operation: hash
+    primitive: xof
+    parameterSetIdentifier: SHAKE256
+  hkdf_key:
+    algorithm: HKDF
+    algorithmFamily: HKDF
+    findingType: kdf
+    operation: keyderive
+    primitive: kdf
+    materialSource: derived
+  hkdf_extract:
+    algorithm: HKDF
+    algorithmFamily: HKDF
+    findingType: kdf
+    operation: keyderive
+    primitive: kdf
+    materialSource: derived
+  hkdf_expand:
+    algorithm: HKDF
+    algorithmFamily: HKDF
+    findingType: kdf
+    operation: keyderive
+    primitive: kdf
+    materialSource: derived
+  ecdh_p256_generatekey:
+    algorithm: ECDH
+    algorithmFamily: ECDH
+    findingType: key_exchange
+    operation: keyexchange
+    primitive: key-agree
+    curve: P256
+    parameterSetIdentifier: P256
+    materialSource: generated
+  ecdh_p384_generatekey:
+    algorithm: ECDH
+    algorithmFamily: ECDH
+    findingType: key_exchange
+    operation: keyexchange
+    primitive: key-agree
+    curve: P384
+    parameterSetIdentifier: P384
+    materialSource: generated
+  ecdh_p521_generatekey:
+    algorithm: ECDH
+    algorithmFamily: ECDH
+    findingType: key_exchange
+    operation: keyexchange
+    primitive: key-agree
+    curve: P521
+    parameterSetIdentifier: P521
+    materialSource: generated
+  ecdh_x25519_generatekey:
+    algorithm: ECDH
+    algorithmFamily: ECDH
+    findingType: key_exchange
+    operation: keyexchange
+    primitive: key-agree
+    curve: X25519
+    parameterSetIdentifier: X25519
+    materialSource: generated
+  ecdh_computesecret:
+    algorithm: ECDH
+    algorithmFamily: ECDH
+    findingType: key_exchange
+    operation: keyexchange
+    primitive: key-agree
+  mlkem_generatekey768:
+    algorithm: ML-KEM-768
+    algorithmFamily: ML-KEM
+    findingType: key_exchange
+    assetType: algorithm
+    operation: keyexchange
+    cryptoFunctions:
+    - keygen
+    - encapsulate
+    - decapsulate
+    primitive: kem
+    parameterSetIdentifier: '768'
+    classicalSecurityLevel: 192
+    nistQuantumSecurityLevel: 1
+    materialSource: generated
+  mlkem_generatekey1024:
+    algorithm: ML-KEM-1024
+    algorithmFamily: ML-KEM
+    findingType: key_exchange
+    assetType: algorithm
+    operation: keyexchange
+    cryptoFunctions:
+    - keygen
+    - encapsulate
+    - decapsulate
+    primitive: kem
+    parameterSetIdentifier: '1024'
+    classicalSecurityLevel: 256
+    nistQuantumSecurityLevel: 5
+    materialSource: generated
+  mlkem_encapsulate:
+    algorithm: ML-KEM
+    algorithmFamily: ML-KEM
+    findingType: key_exchange
+    assetType: algorithm
+    operation: keyexchange
+    cryptoFunctions:
+    - encapsulate
+    primitive: kem
+  mlkem_decapsulate:
+    algorithm: ML-KEM
+    algorithmFamily: ML-KEM
+    findingType: key_exchange
+    assetType: algorithm
+    operation: keyexchange
+    cryptoFunctions:
+    - decapsulate
+    primitive: kem
+  rand_read:
+    algorithm: CSPRNG
+    algorithmFamily: CSPRNG
+    findingType: rng
+    operation: other
+    primitive: drbg
+    materialSource: generated
+  rand_reader:
+    algorithm: CSPRNG
+    algorithmFamily: CSPRNG
+    findingType: rng
+    operation: other
+    primitive: drbg
+    materialSource: generated
+  rand_int:
+    algorithm: CSPRNG
+    algorithmFamily: CSPRNG
+    findingType: rng
+    operation: other
+    primitive: drbg
+    materialSource: generated
+  rand_prime:
+    algorithm: CSPRNG
+    algorithmFamily: CSPRNG
+    findingType: rng
+    operation: other
+    primitive: drbg
+    materialSource: generated
+  hkdf_new:
+    algorithm: HKDF
+    algorithmFamily: HKDF
+    findingType: kdf
+    operation: keyderive
+    primitive: kdf
+    materialSource: derived
+  argon2id_key:
+    algorithm: Argon2id
+    algorithmFamily: Argon2
+    findingType: kdf
+    operation: keyderive
+    primitive: kdf
+    materialSource: derived
+  argon2_key:
+    algorithm: Argon2
+    algorithmFamily: Argon2
+    findingType: kdf
+    operation: keyderive
+    primitive: kdf
+    materialSource: derived
+  scrypt_key:
+    algorithm: scrypt
+    algorithmFamily: scrypt
+    findingType: kdf
+    operation: keyderive
+    primitive: kdf
+    materialSource: derived
+  bcrypt_hash:
+    algorithm: bcrypt
+    algorithmFamily: bcrypt
+    findingType: kdf
+    assetType: algorithm
+    operation: keyderive
+    cryptoFunctions:
+    - keyderive
+    primitive: kdf
+    materialSource: derived
+  bcrypt_generate:
+    algorithm: bcrypt
+    algorithmFamily: bcrypt
+    findingType: kdf
+    operation: keyderive
+    primitive: kdf
+    materialSource: derived
+  bcrypt_compare:
+    algorithm: bcrypt
+    algorithmFamily: bcrypt
+    findingType: kdf
+    operation: verify
+    primitive: kdf
+  blake2b_new:
+    algorithm: BLAKE2b
+    algorithmFamily: BLAKE2
+    findingType: hash
+    assetType: algorithm
+    operation: hash
+    cryptoFunctions:
+    - digest
+    primitive: hash
+    parameterSetIdentifier: '512'
+    classicalSecurityLevel: 256
+  blake2b_sum:
+    algorithm: BLAKE2b
+    algorithmFamily: BLAKE2
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '512'
+  blake2s_new:
+    algorithm: BLAKE2s
+    algorithmFamily: BLAKE2
+    findingType: hash
+    assetType: algorithm
+    operation: hash
+    cryptoFunctions:
+    - digest
+    primitive: hash
+    parameterSetIdentifier: '256'
+    classicalSecurityLevel: 128
+  blake2s_sum:
+    algorithm: BLAKE2s
+    algorithmFamily: BLAKE2
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '256'
+  blake3_new:
+    algorithm: BLAKE3
+    algorithmFamily: BLAKE3
+    findingType: hash
+    assetType: algorithm
+    operation: hash
+    cryptoFunctions:
+    - digest
+    primitive: hash
+    parameterSetIdentifier: '256'
+    classicalSecurityLevel: 128
+  blake3_sum:
+    algorithm: BLAKE3
+    algorithmFamily: BLAKE3
+    findingType: hash
+    operation: hash
+    primitive: hash
+    parameterSetIdentifier: '256'
+  blake3_keyed:
+    algorithm: BLAKE3
+    algorithmFamily: BLAKE3
+    findingType: mac
+    operation: sign
+    primitive: mac
+    parameterSetIdentifier: '256'
+  nacl_box_seal:
+    algorithm: NaCl-Box
+    algorithmFamily: NaCl
+    findingType: cipher
+    operation: encrypt
+    primitive: pke
+    curve: Curve25519
+  nacl_box_open:
+    algorithm: NaCl-Box
+    algorithmFamily: NaCl
+    findingType: cipher
+    operation: decrypt
+    primitive: pke
+    curve: Curve25519
+  nacl_box_generatekey:
+    algorithm: NaCl-Box
+    algorithmFamily: NaCl
+    findingType: key_generation
+    operation: keygen
+    primitive: pke
+    curve: Curve25519
+    materialSource: generated
+  nacl_secretbox_seal:
+    algorithm: NaCl-SecretBox
+    algorithmFamily: NaCl
+    findingType: aead
+    operation: seal
+    primitive: aead
+    keySize: 256
+  nacl_secretbox_open:
+    algorithm: NaCl-SecretBox
+    algorithmFamily: NaCl
+    findingType: aead
+    operation: unseal
+    primitive: aead
+    keySize: 256
+  nacl_sign:
+    algorithm: Ed25519
+    algorithmFamily: EdDSA
+    findingType: signature
+    operation: sign
+    primitive: signature
+    curve: Ed25519
+  nacl_sign_open:
+    algorithm: Ed25519
+    algorithmFamily: EdDSA
+    findingType: signature
+    operation: verify
+    primitive: signature
+    curve: Ed25519
+  nacl_sign_generatekey:
+    algorithm: Ed25519
+    algorithmFamily: EdDSA
+    findingType: key_generation
+    operation: keygen
+    primitive: signature
+    curve: Ed25519
+    materialSource: generated
+  chacha20poly1305_new:
+    algorithm: ChaCha20-Poly1305
+    algorithmFamily: ChaCha20
+    findingType: aead
+    operation: encrypt
+    primitive: aead
+    mode: Poly1305
+    keySize: 256
+    nonceSize: 12
+    tagSize: 16
+    materialSource: generated
+  chacha20poly1305_newx:
+    algorithm: ChaCha20-Poly1305
+    algorithmFamily: ChaCha20
+    findingType: aead
+    operation: encrypt
+    primitive: aead
+    mode: Poly1305
+    keySize: 256
+    nonceSize: 24
+    tagSize: 16
+    materialSource: generated
+  x25519_scalarmult:
+    algorithm: X25519
+    algorithmFamily: X25519
+    findingType: key_exchange
+    operation: keyexchange
+    primitive: key-agree
+    curve: Curve25519
+    parameterSetIdentifier: X25519
+  x25519_x25519:
+    algorithm: X25519
+    algorithmFamily: X25519
+    findingType: key_exchange
+    operation: keyexchange
+    primitive: key-agree
+    curve: Curve25519
+    parameterSetIdentifier: X25519
+  cipher_newcbcencrypter_aes:
+    algorithm: AES-CBC
+    algorithmFamily: AES
+    findingType: cipher
+    operation: encrypt
+    primitive: block-cipher
+    mode: CBC
+    blockSize: 128
+  cipher_newcbcencrypter_des:
+    algorithm: DES-CBC
+    algorithmFamily: DES
+    findingType: cipher
+    operation: encrypt
+    primitive: block-cipher
+    mode: CBC
+    blockSize: 64
+    keySize: 56
+  cipher_newcbcencrypter_des3:
+    algorithm: 3DES-CBC
+    algorithmFamily: 3DES
+    findingType: cipher
+    operation: encrypt
+    primitive: block-cipher
+    mode: CBC
+    blockSize: 64
+    keySize: 168
+  cipher_newcbcdecrypter_aes:
+    algorithm: AES-CBC
+    algorithmFamily: AES
+    findingType: cipher
+    operation: decrypt
+    primitive: block-cipher
+    mode: CBC
+    blockSize: 128
+  cipher_newcbcdecrypter_des:
+    algorithm: DES-CBC
+    algorithmFamily: DES
+    findingType: cipher
+    operation: decrypt
+    primitive: block-cipher
+    mode: CBC
+    blockSize: 64
+    keySize: 56
+  cipher_newcbcdecrypter_des3:
+    algorithm: 3DES-CBC
+    algorithmFamily: 3DES
+    findingType: cipher
+    operation: decrypt
+    primitive: block-cipher
+    mode: CBC
+    blockSize: 64
+    keySize: 168
+  cipher_newcfbencrypter_aes:
+    algorithm: AES-CFB
+    algorithmFamily: AES
+    findingType: cipher
+    operation: encrypt
+    primitive: block-cipher
+    mode: CFB
+    blockSize: 128
+  cipher_newcfbencrypter_des:
+    algorithm: DES-CFB
+    algorithmFamily: DES
+    findingType: cipher
+    operation: encrypt
+    primitive: block-cipher
+    mode: CFB
+    blockSize: 64
+    keySize: 56
+  cipher_newcfbencrypter_des3:
+    algorithm: 3DES-CFB
+    algorithmFamily: 3DES
+    findingType: cipher
+    operation: encrypt
+    primitive: block-cipher
+    mode: CFB
+    blockSize: 64
+    keySize: 168
+  cipher_newcfbdecrypter_aes:
+    algorithm: AES-CFB
+    algorithmFamily: AES
+    findingType: cipher
+    operation: decrypt
+    primitive: block-cipher
+    mode: CFB
+    blockSize: 128
+  cipher_newcfbdecrypter_des:
+    algorithm: DES-CFB
+    algorithmFamily: DES
+    findingType: cipher
+    operation: decrypt
+    primitive: block-cipher
+    mode: CFB
+    blockSize: 64
+    keySize: 56
+  cipher_newcfbdecrypter_des3:
+    algorithm: 3DES-CFB
+    algorithmFamily: 3DES
+    findingType: cipher
+    operation: decrypt
+    primitive: block-cipher
+    mode: CFB
+    blockSize: 64
+    keySize: 168
+  cipher_newctr_aes:
+    algorithm: AES-CTR
+    algorithmFamily: AES
+    findingType: cipher
+    operation: encrypt
+    primitive: block-cipher
+    mode: CTR
+    blockSize: 128
+  cipher_newctr_des:
+    algorithm: DES-CTR
+    algorithmFamily: DES
+    findingType: cipher
+    operation: encrypt
+    primitive: block-cipher
+    mode: CTR
+    blockSize: 64
+    keySize: 56
+  cipher_newctr_des3:
+    algorithm: 3DES-CTR
+    algorithmFamily: 3DES
+    findingType: cipher
+    operation: encrypt
+    primitive: block-cipher
+    mode: CTR
+    blockSize: 64
+    keySize: 168
+  cipher_newofb_aes:
+    algorithm: AES-OFB
+    algorithmFamily: AES
+    findingType: cipher
+    operation: encrypt
+    primitive: block-cipher
+    mode: OFB
+    blockSize: 128
+  cipher_newofb_des:
+    algorithm: DES-OFB
+    algorithmFamily: DES
+    findingType: cipher
+    operation: encrypt
+    primitive: block-cipher
+    mode: OFB
+    blockSize: 64
+    keySize: 56
+  cipher_newofb_des3:
+    algorithm: 3DES-OFB
+    algorithmFamily: 3DES
+    findingType: cipher
+    operation: encrypt
+    primitive: block-cipher
+    mode: OFB
+    blockSize: 64
+    keySize: 168
+languages:
+  go:
+    stdlibPackages:
+      - crypto
+    mappings:
+      crypto/pbkdf2:
+        Key: pbkdf2_key
+      crypto/sha256:
+        New: sha256_new
+        Sum: sha256_sum
+        Sum256: sha256_sum256
+      crypto/sha512:
+        New: sha512_new
+        Sum: sha512_sum
+      crypto/sha384:
+        New: sha384_new
+        Sum: sha384_sum
+      crypto/sha224:
+        New: sha224_new
+        Sum: sha224_sum
+      crypto/sha1:
+        New: sha1_new
+        Sum: sha1_sum
+      crypto/md5:
+        New: md5_new
+        Sum: md5_sum
+      crypto/aes:
+        NewCipher: aes_newcipher
+        Encrypt: aes_encrypt
+        Decrypt: aes_decrypt
+      crypto/ecdsa:
+        Sign: ecdsa_sign
+        Verify: ecdsa_verify
+        GenerateKey: ecdsa_generatekey
+        SignASN1: ecdsa_signasn1
+        VerifyASN1: ecdsa_verifyasn1
+      crypto/elliptic:
+        P256: elliptic_p256
+        P384: elliptic_p384
+        P521: elliptic_p521
+      crypto/hmac:
+        New: hmac_new
+        Equal: hmac_equal
+      crypto/cipher:
+        Seal: cipher_seal
+        Open: cipher_open
+        NewGCM: cipher_newgcm
+        NewCBCEncrypter: cipher_newcbcencrypter_aes
+        NewCBCDecrypter: cipher_newcbcdecrypter_aes
+      crypto/rsa:
+        EncryptPKCS1v15: rsa_encryptpkcs1v15
+        EncryptOAEP: rsa_encryptoaep
+        DecryptPKCS1v15SessionKey: rsa_decryptpkcs1v15sessionkey
+        DecryptOAEP: rsa_decryptoaep
+        SignPKCS1v15: rsa_signpkcs1v15
+        SignPSS: rsa_signpss
+        VerifyPKCS1v15: rsa_verifypkcs1v15
+        VerifyPSS: rsa_verifypss
+        GenerateKey: rsa_generatekey
+        GenerateMultiPrimeKey: rsa_generatemultiprimekey
+      crypto/ed25519:
+        Verify: ed25519_verify
+        PublicKey: ed25519_publickey
+        PrivateKey: ed25519_privatekey
+        GenerateKey: ed25519_generatekey
+        NewKeyFromSeed: ed25519_newkeyfromseed
+        Sign: ed25519_sign
+        VerifyWithOptions: ed25519_verifywithoptions
+      crypto/x509:
+        NewCertPool: x509_newcertpool
+        ParseCertificate: x509_parsecertificate
+        ParseCertificates: x509_parsecertificates
+        CreateCertificate: x509_createcertificate
+        CreateCertificateRequest: x509_createcertificaterequest
+        ParseCertificateRequest: x509_parsecertificaterequest
+        ParsePKCS1PrivateKey: x509_parsepkcs1privatekey
+        ParsePKCS1PublicKey: x509_parsepkcs1publickey
+        MarshalPKCS1PrivateKey: x509_marshalpkcs1privatekey
+        MarshalPKCS1PublicKey: x509_marshalpkcs1publickey
+        ParseECPrivateKey: x509_parseecprivatekey
+        MarshalECPrivateKey: x509_marshalecprivatekey
+        ParsePKCS8PrivateKey: x509_parsepkcs8privatekey
+        MarshalPKCS8PrivateKey: x509_marshalpkcs8privatekey
+        ParsePKIXPublicKey: x509_parsepkixpublickey
+        MarshalPKIXPublicKey: x509_marshalpkixpublickey
+        ParseDERCRL: x509_parsedercrl
+        ParseCRL: x509_parsecrl
+        CreateRevocationList: x509_createrevocationlist
+        ParseRevocationList: x509_parserevocationlist
+        DecryptPEMBlock: x509_decryptpemblock
+        EncryptPEMBlock: x509_encryptpemblock
+        IsEncryptedPEMBlock: x509_isencryptedpemblock
+      crypto/subtle:
+        ConstantTimeCompare: subtle_constanttimecompare
+      crypto/tls:
+        Dial: tls_dial
+        Listen: tls_listen
+        Server: tls_server
+        Client: tls_client
+        LoadX509KeyPair: tls_loadx509keypair
+        X509KeyPair: tls_x509keypair
+        VersionSSL30: tls_version_ssl30
+        VersionTLS10: tls_version_tls10
+        VersionTLS11: tls_version_tls11
+        VersionTLS12: tls_version_tls12
+        VersionTLS13: tls_version_tls13
+      crypto/des:
+        NewCipher: des_newcipher
+        NewTripleDESCipher: des3_newcipher
+      crypto/dsa:
+        GenerateParameters: dsa_generateparameters
+        GenerateKey: dsa_generatekey
+        Sign: dsa_sign
+        Verify: dsa_verify
+      crypto/rc4:
+        NewCipher: rc4_newcipher
+      crypto/sha3:
+        New224: sha3_new224
+        New256: sha3_new256
+        New384: sha3_new384
+        New512: sha3_new512
+        NewShake128: sha3_shake128
+        NewShake256: sha3_shake256
+      crypto/hkdf:
+        Key: hkdf_key
+        Extract: hkdf_extract
+        Expand: hkdf_expand
+      crypto/ecdh:
+        P256: ecdh_p256_generatekey
+        P384: ecdh_p384_generatekey
+        P521: ecdh_p521_generatekey
+        X25519: ecdh_x25519_generatekey
+      crypto/mlkem:
+        GenerateKey768: mlkem_generatekey768
+        GenerateKey1024: mlkem_generatekey1024
+        Encapsulate: mlkem_encapsulate
+        Decapsulate: mlkem_decapsulate
+      crypto/rand:
+        Read: rand_read
+        Reader: rand_reader
+        Int: rand_int
+        Prime: rand_prime
+      golang.org/x/crypto/pbkdf2:
+        Key: pbkdf2_key
+      golang.org/x/crypto/hkdf:
+        New: hkdf_new
+      golang.org/x/crypto/argon2:
+        IDKey: argon2id_key
+        Key: argon2_key
+      golang.org/x/crypto/scrypt:
+        Key: scrypt_key
+      golang.org/x/crypto/chacha20poly1305:
+        New: chacha20poly1305_new
+        NewX: chacha20poly1305_newx
+      golang.org/x/crypto/curve25519:
+        ScalarMult: x25519_scalarmult
+        X25519: x25519_x25519
+      golang.org/x/crypto/bcrypt:
+        GenerateFromPassword: bcrypt_generate
+        CompareHashAndPassword: bcrypt_compare
+        Cost: bcrypt_hash
+      golang.org/x/crypto/blake2b:
+        New256: blake2b_new
+        New384: blake2b_new
+        New512: blake2b_new
+        Sum256: blake2b_sum
+        Sum384: blake2b_sum
+        Sum512: blake2b_sum
+        New: blake2b_new
+      golang.org/x/crypto/blake2s:
+        New256: blake2s_new
+        New128: blake2s_new
+        Sum256: blake2s_sum
+        New: blake2s_new
+      github.com/zeebo/blake3:
+        New: blake3_new
+        Sum256: blake3_sum
+        Sum512: blake3_sum
+        DeriveKey: blake3_keyed
+      golang.org/x/crypto/nacl/box:
+        Seal: nacl_box_seal
+        Open: nacl_box_open
+        GenerateKey: nacl_box_generatekey
+        Precompute: nacl_box_seal
+      golang.org/x/crypto/nacl/secretbox:
+        Seal: nacl_secretbox_seal
+        Open: nacl_secretbox_open
+      golang.org/x/crypto/nacl/sign:
+        Sign: nacl_sign
+        Open: nacl_sign_open
+        GenerateKey: nacl_sign_generatekey
+    structs:
+      crypto/tls.Config:
+        MinVersion: tls_config_min_version
+        MaxVersion: tls_config_max_version
+        CipherSuites: tls_config_cipher_suites
+        CurvePreferences: tls_config_curve_preferences
+        InsecureSkipVerify: tls_config_insecure_skip_verify
+        ClientAuth: tls_config_client_auth
+        Certificates: tls_config_certificates
+        RootCAs: tls_config_root_cas
+        ClientCAs: tls_config_client_cas
+      crypto/x509.Certificate:
+        SignatureAlgorithm: x509_cert_signature_algorithm
+        PublicKeyAlgorithm: x509_cert_public_key_algorithm
+        KeyUsage: x509_cert_key_usage
+    constants:
+      crypto/tls:
+        VersionSSL30:
+          value: 768
+          protocol: SSL
+          version: '3.0'
+        VersionTLS10:
+          value: 769
+          protocol: TLS
+          version: '1.0'
+        VersionTLS11:
+          value: 770
+          protocol: TLS
+          version: '1.1'
+        VersionTLS12:
+          value: 771
+          protocol: TLS
+          version: '1.2'
+        VersionTLS13:
+          value: 772
+          protocol: TLS
+          version: '1.3'
+  python:
+    stdlibPackages:
+      - hashlib
+      - hmac
+      - ssl
+      - secrets
+    mappings:
+      argon2:
+        hash_password: argon2id_key
+      argon2.argon2d:
+        hash: argon2_key
+      argon2.argon2i:
+        hash: argon2_key
+      argon2.argon2id:
+        hash: argon2id_key
+      cryptography.hazmat.primitives.asymmetric.ec:
+        SECP256R1: elliptic_p256
+        SECP384R1: elliptic_p384
+        SECP521R1: elliptic_p521
+        derive_private_key: ecdh_p256_generatekey
+        generate_private_key: ecdsa_generatekey
+      cryptography.hazmat.primitives.asymmetric.ec.EllipticCurvePrivateKey:
+        exchange: ecdh_p256_generatekey
+        sign: ecdsa_sign
+      cryptography.hazmat.primitives.asymmetric.ec.EllipticCurvePublicKey:
+        verify: ecdsa_verify
+      cryptography.hazmat.primitives.asymmetric.ed25519.Ed25519PrivateKey:
+        from_private_bytes: ed25519_newkeyfromseed
+        generate: ed25519_generatekey
+        sign: ed25519_sign
+      cryptography.hazmat.primitives.asymmetric.ed25519.Ed25519PublicKey:
+        verify: ed25519_verifywithoptions
+      cryptography.hazmat.primitives.asymmetric.padding:
+        OAEP: rsa_encryptoaep
+        PSS: rsa_signpss
+      cryptography.hazmat.primitives.asymmetric.rsa:
+        generate_private_key: rsa_generatekey
+      cryptography.hazmat.primitives.asymmetric.rsa.RSAPrivateKey:
+        decrypt: rsa_decryptoaep
+        sign: rsa_signpss
+      cryptography.hazmat.primitives.asymmetric.rsa.RSAPublicKey:
+        encrypt: rsa_encryptoaep
+        verify: rsa_verifypss
+      cryptography.hazmat.primitives.ciphers:
+        Cipher: aes_newcipher
+      cryptography.hazmat.primitives.ciphers.Cipher:
+        decryptor: aes_decrypt
+        encryptor: aes_encrypt
+      cryptography.hazmat.primitives.ciphers.Cipher.aes:
+        cbc: cipher_newcbcencrypter_aes
+      cryptography.hazmat.primitives.ciphers.Cipher.des:
+        cbc: cipher_newcbcencrypter_des
+      cryptography.hazmat.primitives.ciphers.Cipher.tripledes:
+        cbc: cipher_newcbcencrypter_des3
+      cryptography.hazmat.primitives.ciphers.aead:
+        AESGCM: cipher_newgcm
+        ChaCha20Poly1305: chacha20poly1305_new
+      cryptography.hazmat.primitives.ciphers.aead.AESGCM:
+        decrypt: cipher_open
+        encrypt: cipher_seal
+      cryptography.hazmat.primitives.ciphers.aead.ChaCha20Poly1305:
+        decrypt: chacha20poly1305_new
+        encrypt: chacha20poly1305_new
+      cryptography.hazmat.primitives.ciphers.algorithms:
+        AES: aes_newcipher
+        ARC4: rc4_newcipher
+        TripleDES: des3_newcipher
+      cryptography.hazmat.primitives.ciphers.modes:
+        CBC: cipher_newcbcencrypter_aes
+        GCM: cipher_newgcm
+      cryptography.hazmat.primitives.ciphers.modes.CBC:
+        aes: cipher_newcbcencrypter_aes
+        des: cipher_newcbcencrypter_des
+        tripledes: cipher_newcbcencrypter_des3
+      cryptography.hazmat.primitives.ciphers.modes.CFB:
+        aes: cipher_newcfbencrypter_aes
+        des: cipher_newcfbencrypter_des
+        tripledes: cipher_newcfbencrypter_des3
+      cryptography.hazmat.primitives.ciphers.modes.CTR:
+        aes: cipher_newctr_aes
+        des: cipher_newctr_des
+        tripledes: cipher_newctr_des3
+      cryptography.hazmat.primitives.ciphers.modes.OFB:
+        aes: cipher_newofb_aes
+        des: cipher_newofb_des
+        tripledes: cipher_newofb_des3
+      cryptography.hazmat.primitives.kdf.hkdf:
+        HKDF: hkdf_key
+      cryptography.hazmat.primitives.kdf.hkdf.HKDF:
+        derive: hkdf_key
+        expand: hkdf_expand
+        extract: hkdf_extract
+      cryptography.hazmat.primitives.serialization:
+        load_der_private_key: x509_parsepkcs1privatekey
+        load_der_public_key: x509_parsepkcs1publickey
+        load_pem_private_key: x509_parsepkcs1privatekey
+        load_pem_public_key: x509_parsepkcs1publickey
+        load_ssh_public_key: x509_parsepkixpublickey
+      cryptography.x509:
+        Certificate: x509_parsecertificate
+        CertificateBuilder: x509_createcertificate
+        CertificateSigningRequestBuilder: x509_createcertificaterequest
+        load_der_x509_certificate: x509_parsecertificate
+        load_der_x509_certificates: x509_parsecertificates
+        load_der_x509_csr: x509_parsecertificaterequest
+        load_pem_x509_certificate: x509_parsecertificate
+        load_pem_x509_certificates: x509_parsecertificates
+        load_pem_x509_csr: x509_parsecertificaterequest
+      cryptography.x509.Certificate:
+        public_key: x509_certificate_checksignature
+        verify: x509_certificate_verify
+      hashlib:
+        md5: md5_new
+        pbkdf2_hmac: pbkdf2_key
+        scrypt: scrypt_key
+        sha1: sha1_new
+        sha224: sha224_new
+        sha256: sha256_new
+        sha384: sha384_new
+        sha3_224: sha3_new224
+        sha3_256: sha3_new256
+        sha3_384: sha3_new384
+        sha3_512: sha3_new512
+        sha512: sha512_new
+        shake_128: sha3_shake128
+        shake_256: sha3_shake256
+      hashlib.md5():
+        digest: md5_sum
+      hashlib.sha1():
+        digest: sha1_sum
+      hashlib.sha224():
+        digest: sha224_sum
+      hashlib.sha256():
+        digest: sha256_sum
+        hexdigest: sha256_sum
+      hashlib.sha384():
+        digest: sha384_sum
+      hashlib.sha512():
+        digest: sha512_sum
+      hmac:
+        HMAC: hmac_new
+        compare_digest: subtle_constanttimecompare
+        new: hmac_new
+      hmac.HMAC:
+        digest: hmac_new
+        update: hmac_new
+      hmac.compare_digest:
+        hmac: hmac_equal
+      os:
+        urandom: rand_read
+      secrets:
+        compare_digest: subtle_constanttimecompare
+        randbelow: rand_int
+        token_bytes: rand_read
+        token_hex: rand_read
+        token_urlsafe: rand_read
+      secrets.compare_digest:
+        hmac: hmac_equal
+      ssl:
+        HAS_TLSv1_3: tls_version_tls13
+        PROTOCOL_SSLv3: tls_version_ssl30
+        PROTOCOL_TLS: tls_version_tls12
+        PROTOCOL_TLS_CLIENT: tls_version_tls12
+        PROTOCOL_TLS_SERVER: tls_version_tls12
+        PROTOCOL_TLSv1: tls_version_tls10
+        PROTOCOL_TLSv1_1: tls_version_tls11
+        PROTOCOL_TLSv1_2: tls_version_tls12
+        SSLContext: tls_server
+        create_default_context: tls_client
+        wrap_socket: tls_dial
+      bcrypt:
+        hashpw: bcrypt_hash
+        gensalt: bcrypt_generate
+        checkpw: bcrypt_compare
+        kdf: bcrypt_hash
+      hashlib.blake2b:
+        hexdigest: blake2b_sum
+        digest: blake2b_sum
+      hashlib.blake2s:
+        hexdigest: blake2s_sum
+        digest: blake2s_sum
+      nacl.public:
+        PrivateKey: nacl_box_generatekey
+        PublicKey: nacl_box_generatekey
+        Box: nacl_box_seal
+      nacl.public.Box:
+        encrypt: nacl_box_seal
+        decrypt: nacl_box_open
+      nacl.public.PrivateKey:
+        generate: nacl_box_generatekey
+      nacl.secret:
+        SecretBox: nacl_secretbox_seal
+      nacl.secret.SecretBox:
+        encrypt: nacl_secretbox_seal
+        decrypt: nacl_secretbox_open
+      nacl.signing:
+        SigningKey: nacl_sign_generatekey
+        VerifyKey: nacl_sign_open
+      nacl.signing.SigningKey:
+        sign: nacl_sign
+        generate: nacl_sign_generatekey
+      nacl.signing.VerifyKey:
+        verify: nacl_sign_open
+      nacl.hash:
+        sha256: sha256_new
+        sha512: sha512_new
+        blake2b: blake2b_new
+      nacl.pwhash:
+        argon2id: argon2id_key
+        argon2i: argon2_key
+        scrypt: scrypt_key
+      Crypto.Hash.SHA256:
+        new: sha256_new
+        digest: sha256_sum
+      Crypto.Hash.SHA512:
+        new: sha512_new
+        digest: sha512_sum
+      Crypto.Hash.SHA1:
+        new: sha1_new
+        digest: sha1_sum
+      Crypto.Hash.MD5:
+        new: md5_new
+        digest: md5_sum
+      Crypto.Hash.SHA3_256:
+        new: sha3_new256
+      Crypto.Hash.SHA3_512:
+        new: sha3_new512
+      Crypto.Hash.BLAKE2b:
+        new: blake2b_new
+        digest: blake2b_sum
+      Crypto.Hash.BLAKE2s:
+        new: blake2s_new
+        digest: blake2s_sum
+      Crypto.Hash.HMAC:
+        new: hmac_new
+        digest: hmac_new
+      Crypto.Cipher.AES:
+        new: aes_newcipher
+        encrypt: aes_encrypt
+        decrypt: aes_decrypt
+      Crypto.Cipher.DES:
+        new: des_newcipher
+      Crypto.Cipher.DES3:
+        new: des3_newcipher
+      Crypto.Cipher.ChaCha20:
+        new: chacha20poly1305_new
+      Crypto.Cipher.ChaCha20_Poly1305:
+        new: chacha20poly1305_new
+      Crypto.PublicKey.RSA:
+        generate: rsa_generatekey
+        import_key: x509_parsepkcs1privatekey
+      Crypto.PublicKey.ECC:
+        generate: ecdsa_generatekey
+        import_key: x509_parseecprivatekey
+      Crypto.Signature.pkcs1_15:
+        new: rsa_signpkcs1v15
+      Crypto.Signature.pss:
+        new: rsa_signpss
+      Crypto.Signature.DSS:
+        new: ecdsa_sign
+      Crypto.Protocol.KDF:
+        PBKDF2: pbkdf2_key
+        scrypt: scrypt_key
+        HKDF: hkdf_key
+        bcrypt: bcrypt_hash
+      Crypto.Random:
+        get_random_bytes: rand_read
+        random: rand_int
+      cryptography.fernet:
+        Fernet: aes_newcipher
+      cryptography.fernet.Fernet:
+        encrypt: aes_encrypt
+        decrypt: aes_decrypt
+        generate_key: rand_read
+      blake3:
+        blake3: blake3_new
+      blake3.blake3:
+        digest: blake3_sum
+        hexdigest: blake3_sum
+  rust:
+    stdlibPackages:
+      - std
+      - core
+    mappings:
+      ring::pbkdf2:
+        derive: pbkdf2_key
+      ring::digest:
+        digest: sha256_sum
+        SHA256: sha256_new
+        SHA512: sha512_new
+        SHA384: sha384_new
+        SHA1: sha1_new
+      ring::aead:
+        seal: cipher_seal
+        open: cipher_open
+        AES_256_GCM: cipher_newgcm
+        AES_128_GCM: cipher_newgcm
+      ring::signature:
+        sign: ecdsa_sign
+        verify: ecdsa_verify
+        ECDSA_P256_SHA256_ASN1_SIGNING: elliptic_p256
+        ECDSA_P384_SHA384_ASN1_SIGNING: elliptic_p384
+        RSA_PKCS1_2048_8192_SHA256: rsa_signpkcs1v15
+        RSA_PSS_2048_8192_SHA256: rsa_signpss
+      ring::hmac:
+        sign: hmac_new
+        verify: hmac_equal
+      sha2::Sha256:
+        new: sha256_new
+        digest: sha256_sum
+        finalize: sha256_sum
+      sha2::Sha512:
+        new: sha512_new
+        digest: sha512_sum
+      sha2::Sha384:
+        new: sha384_new
+        digest: sha384_sum
+      sha1::Sha1:
+        new: sha1_new
+        digest: sha1_sum
+      md5::Md5:
+        new: md5_new
+        digest: md5_sum
+      aes::Aes128:
+        new: aes_newcipher
+      aes::Aes256:
+        new: aes_newcipher
+      aes::Aes128Gcm:
+        new: cipher_newgcm
+      aes::Aes256Gcm:
+        new: cipher_newgcm
+      aes_gcm::Aes128Gcm:
+        new: cipher_newgcm
+      aes_gcm::Aes256Gcm:
+        new: cipher_newgcm
+      aes_gcm::AesGcm:
+        encrypt: cipher_seal
+        decrypt: cipher_open
+      p256::SecretKey:
+        random: ecdsa_generatekey
+        from_bytes: ecdh_p256_generatekey
+      p256::PublicKey:
+        from_secret_key: ecdh_p256_generatekey
+      p384::SecretKey:
+        random: ecdsa_generatekey
+        from_bytes: ecdh_p384_generatekey
+      p384::PublicKey:
+        from_secret_key: ecdh_p384_generatekey
+      p521::SecretKey:
+        random: ecdsa_generatekey
+        from_bytes: ecdh_p521_generatekey
+      p521::PublicKey:
+        from_secret_key: ecdh_p521_generatekey
+      ecdsa::SigningKey:
+        new: ecdsa_generatekey
+        sign: ecdsa_signasn1
+      ecdsa::VerifyingKey:
+        verify: ecdsa_verifyasn1
+      hmac::Hmac:
+        new: hmac_new
+        update: hmac_new
+        finalize: hmac_new
+        verify: hmac_equal
+      hmac:
+        verify: hmac_equal
+      rsa::RsaPrivateKey:
+        new: rsa_generatekey
+        decrypt: rsa_decryptoaep
+        sign: rsa_signpkcs1v15
+        from_pkcs8: x509_parsepkcs8privatekey
+        from_pkcs1: x509_parsepkcs1privatekey
+        to_pkcs8: x509_marshalpkcs8privatekey
+        to_pkcs1: x509_marshalpkcs1privatekey
+      rsa::RsaPublicKey:
+        encrypt: rsa_encryptpkcs1v15
+        verify: rsa_verifypkcs1v15
+        from_pkcs8: x509_parsepkixpublickey
+        from_pkcs1: x509_parsepkcs1publickey
+        to_pkcs8: x509_marshalpkixpublickey
+        to_pkcs1: x509_marshalpkcs1publickey
+      ed25519_dalek::SigningKey:
+        sign: ed25519_sign
+        generate: ed25519_generatekey
+        from_bytes: ed25519_newkeyfromseed
+      ed25519_dalek::VerifyingKey:
+        verify: ed25519_verify
+        verify_strict: ed25519_verifywithoptions
+      x509_parser:
+        parse_x509_certificate: x509_parsecertificate
+        parse_x509_certificates: x509_parsecertificates
+        parse_x509_csr: x509_parsecertificaterequest
+        parse_x509_crl: x509_parsecrl
+        parse_x509_crl_der: x509_parsedercrl
+      rustls::Certificate:
+        from_der: x509_parsecertificate
+      rustls::ClientConfig:
+        new: tls_client
+        with_root_certificates: x509_newcertpool
+        with_client_auth_cert: tls_loadx509keypair
+      rustls::ServerConfig:
+        new: tls_server
+        with_single_cert: tls_loadx509keypair
+        with_single_cert_with_ocsp: tls_loadx509keypair
+      rustls::pki_types::CertificateDer:
+        from: x509_parsecertificate
+        from_pem: x509_parsecertificate
+        from_der: x509_parsecertificate
+      rustls::pki_types::PrivateKeyDer:
+        from: x509_parsepkcs8privatekey
+        from_pem: x509_parsepkcs8privatekey
+        from_der: x509_parsepkcs8privatekey
+      rustls::pki_types::ServerName:
+        try_from: tls_client
+      rustls::pki_types::DnsName:
+        try_from: tls_client
+      rustls::pki_types::IpAddr:
+        try_from: tls_client
+      rustls::ProtocolVersion:
+        TLSv1_2: tls_version_tls12
+        TLSv1_3: tls_version_tls13
+      rustls::SupportedProtocolVersion:
+        TLSv1_2: tls_version_tls12
+        TLSv1_3: tls_version_tls13
+      constant_time_eq:
+        constant_time_eq: subtle_constanttimecompare
+      sha3::Sha3_224:
+        new: sha3_new224
+        digest: sha3_new224
+      sha3::Sha3_256:
+        new: sha3_new256
+        digest: sha3_new256
+      sha3::Sha3_384:
+        new: sha3_new384
+        digest: sha3_new384
+      sha3::Sha3_512:
+        new: sha3_new512
+        digest: sha3_new512
+      sha3::Shake128:
+        new: sha3_shake128
+      sha3::Shake256:
+        new: sha3_shake256
+      rand:
+        thread_rng: rand_reader
+        random: rand_int
+      rand::rngs:
+        ThreadRng: rand_reader
+      rand::RngCore:
+        fill_bytes: rand_read
+      rand::Rng:
+        gen: rand_int
+        gen_range: rand_int
+      x25519_dalek::StaticSecret:
+        random: ecdh_x25519_generatekey
+        diffie_hellman: ecdh_computesecret
+      x25519_dalek::PublicKey:
+        from: ecdh_x25519_generatekey
+      hkdf::Hkdf:
+        extract: hkdf_extract
+        expand: hkdf_expand
+        from_prk: hkdf_key
+      des:
+        Des: des_newcipher
+        TdesEde3: des3_newcipher
+        TdesEde2: des3_newcipher
+      rc4:
+        Rc4: rc4_newcipher
+      chacha20poly1305::ChaCha20Poly1305:
+        new: chacha20poly1305_new
+        encrypt: chacha20poly1305_new
+        decrypt: chacha20poly1305_new
+      chacha20poly1305::XChaCha20Poly1305:
+        new: chacha20poly1305_newx
+      argon2::Argon2:
+        hash_password: argon2id_key
+        hash_password_into: argon2id_key
+        verify_password: argon2id_key
+      scrypt:
+        scrypt: scrypt_key
+        scrypt_simple: scrypt_key
+      bcrypt:
+        hash: bcrypt_hash
+        verify: bcrypt_compare
+        DEFAULT_COST: bcrypt_generate
+      blake2::Blake2b:
+        new: blake2b_new
+        finalize: blake2b_sum
+      blake2::Blake2s:
+        new: blake2s_new
+        finalize: blake2s_sum
+      blake3:
+        hash: blake3_new
+        keyed_hash: blake3_keyed
+        derive_key: blake3_keyed
+      blake3::Hasher:
+        new: blake3_new
+        new_keyed: blake3_keyed
+        new_derive_key: blake3_keyed
+        finalize: blake3_sum
+      sodiumoxide::crypto::box_:
+        seal: nacl_box_seal
+        open: nacl_box_open
+        gen_keypair: nacl_box_generatekey
+      sodiumoxide::crypto::secretbox:
+        seal: nacl_secretbox_seal
+        open: nacl_secretbox_open
+      sodiumoxide::crypto::sign:
+        sign: nacl_sign
+        verify: nacl_sign_open
+        gen_keypair: nacl_sign_generatekey
+      sodiumoxide::crypto::hash:
+        sha256: sha256_new
+        sha512: sha512_new
+      sodiumoxide::crypto::pwhash:
+        pwhash: argon2id_key
+        pwhash_verify: argon2id_key
+      openssl::hash:
+        hash: sha256_sum
+        Hasher: sha256_new
+        MessageDigest: sha256_new
+      openssl::hash::MessageDigest:
+        sha256: sha256_new
+        sha512: sha512_new
+        sha1: sha1_new
+        md5: md5_new
+        sha3_256: sha3_new256
+        sha3_512: sha3_new512
+      openssl::symm:
+        Cipher: aes_newcipher
+        encrypt: aes_encrypt
+        decrypt: aes_decrypt
+        encrypt_aead: cipher_seal
+        decrypt_aead: cipher_open
+      openssl::symm::Cipher:
+        aes_128_cbc: cipher_newcbcencrypter_aes
+        aes_256_cbc: cipher_newcbcencrypter_aes
+        aes_128_gcm: cipher_newgcm
+        aes_256_gcm: cipher_newgcm
+        aes_128_ctr: cipher_newctr_aes
+        aes_256_ctr: cipher_newctr_aes
+        chacha20_poly1305: chacha20poly1305_new
+        des_cbc: cipher_newcbcencrypter_des
+        des_ede3_cbc: cipher_newcbcencrypter_des3
+      openssl::rsa:
+        Rsa: rsa_generatekey
+      openssl::rsa::Rsa:
+        generate: rsa_generatekey
+        public_key_from_pem: x509_parsepkcs1publickey
+        private_key_from_pem: x509_parsepkcs1privatekey
+      openssl::ec:
+        EcKey: ecdsa_generatekey
+      openssl::ec::EcKey:
+        generate: ecdsa_generatekey
+      openssl::pkey:
+        PKey: rsa_generatekey
+      openssl::pkey::PKey:
+        generate_rsa: rsa_generatekey
+        generate_ec: ecdsa_generatekey
+        generate_ed25519: ed25519_generatekey
+      openssl::sign:
+        Signer: rsa_signpkcs1v15
+        Verifier: rsa_verifypkcs1v15
+      openssl::pkcs5:
+        pbkdf2_hmac: pbkdf2_key
+        scrypt: scrypt_key
+      openssl::rand:
+        rand_bytes: rand_read
+      openssl::ssl:
+        SslMethod: tls_client
+        SslConnector: tls_client
+        SslAcceptor: tls_server
+      openssl::ssl::SslMethod:
+        tls: tls_version_tls12
+        tls_client: tls_client
+        tls_server: tls_server
+      openssl::ssl::SslVersion:
+        TLS1_2: tls_version_tls12
+        TLS1_3: tls_version_tls13
+      openssl::x509:
+        X509: x509_parsecertificate
+      openssl::x509::X509:
+        from_pem: x509_parsecertificate
+        from_der: x509_parsecertificate
+  javascript:
+    stdlibPackages:
+      - crypto
+    mappings:
+      argon2:
+        argon2id: argon2id_key
+        hash: argon2id_key
+      crypto:
+        createCipher: aes_newcipher
+        createCipheriv: aes_newcipher
+        createCipheriv('aes-128-cbc'): cipher_newcbcencrypter_aes
+        createCipheriv('aes-128-cfb'): cipher_newcfbencrypter_aes
+        createCipheriv('aes-128-ctr'): cipher_newctr_aes
+        createCipheriv('aes-128-gcm'): cipher_newgcm
+        createCipheriv('aes-128-ofb'): cipher_newofb_aes
+        createCipheriv('aes-192-cbc'): cipher_newcbcencrypter_aes
+        createCipheriv('aes-192-cfb'): cipher_newcfbencrypter_aes
+        createCipheriv('aes-192-ctr'): cipher_newctr_aes
+        createCipheriv('aes-192-ofb'): cipher_newofb_aes
+        createCipheriv('aes-256-cbc'): cipher_newcbcencrypter_aes
+        createCipheriv('aes-256-cfb'): cipher_newcfbencrypter_aes
+        createCipheriv('aes-256-ctr'): cipher_newctr_aes
+        createCipheriv('aes-256-gcm'): cipher_newgcm
+        createCipheriv('aes-256-ofb'): cipher_newofb_aes
+        createCipheriv('chacha20-poly1305'): chacha20poly1305_new
+        createCipheriv('des-cbc'): cipher_newcbcencrypter_des
+        createCipheriv('des-cfb'): cipher_newcfbencrypter_des
+        createCipheriv('des-ctr'): cipher_newctr_des
+        createCipheriv('des-ede3'): des3_newcipher
+        createCipheriv('des-ede3-cbc'): cipher_newcbcencrypter_des3
+        createCipheriv('des-ede3-cfb'): cipher_newcfbencrypter_des3
+        createCipheriv('des-ede3-ctr'): cipher_newctr_des3
+        createCipheriv('des-ede3-ofb'): cipher_newofb_des3
+        createCipheriv('des-ofb'): cipher_newofb_des
+        createCipheriv('rc4'): rc4_newcipher
+        createCipheriv('rc4-40'): rc4_newcipher
+        createCipheriv('rc4-hmac-md5'): rc4_newcipher
+        createCipheriv('xchacha20-poly1305'): chacha20poly1305_newx
+        createDecipher: aes_newcipher
+        createDecipheriv: aes_newcipher
+        createDecipheriv('aes-128-cbc'): cipher_newcbcdecrypter_aes
+        createDecipheriv('aes-128-cfb'): cipher_newcfbdecrypter_aes
+        createDecipheriv('aes-192-cbc'): cipher_newcbcdecrypter_aes
+        createDecipheriv('aes-192-cfb'): cipher_newcfbdecrypter_aes
+        createDecipheriv('aes-256-cbc'): cipher_newcbcdecrypter_aes
+        createDecipheriv('aes-256-cfb'): cipher_newcfbdecrypter_aes
+        createDecipheriv('des-cbc'): cipher_newcbcdecrypter_des
+        createDecipheriv('des-cfb'): cipher_newcfbdecrypter_des
+        createDecipheriv('des-ede3-cbc'): cipher_newcbcdecrypter_des3
+        createDecipheriv('des-ede3-cfb'): cipher_newcfbdecrypter_des3
+        createDiffieHellman: ecdh_p256_generatekey
+        createDiffieHellmanGroup: ecdh_p256_generatekey
+        createECDH: ecdh_p256_generatekey
+        createECDH('prime256v1'): ecdh_p256_generatekey
+        createECDH('secp384r1'): ecdh_p384_generatekey
+        createECDH('secp521r1'): ecdh_p521_generatekey
+        createHash('md5'): md5_new
+        createHash('sha1'): sha1_new
+        createHash('sha224'): sha224_new
+        createHash('sha256'): sha256_new
+        createHash('sha3-224'): sha3_new224
+        createHash('sha3-256'): sha3_new256
+        createHash('sha3-384'): sha3_new384
+        createHash('sha3-512'): sha3_new512
+        createHash('sha384'): sha384_new
+        createHash('sha512'): sha512_new
+        createHash('shake128'): sha3_shake128
+        createHash('shake256'): sha3_shake256
+        createHmac: hmac_new
+        createHmac('sha256'): hmac_new
+        createSign: ecdsa_sign
+        createVerify: ecdsa_verify
+        pbkdf2: pbkdf2_key
+        pbkdf2Sync: pbkdf2_key
+        privateDecrypt: rsa_decryptoaep
+        privateEncrypt: rsa_signpkcs1v15
+        publicDecrypt: rsa_verifypkcs1v15
+        publicEncrypt: rsa_encryptpkcs1v15
+        randomBytes: rand_read
+        randomFill: rand_read
+        randomFillSync: rand_read
+        randomInt: rand_int
+        sign: ed25519_sign
+        timingSafeEqual: subtle_constanttimecompare
+        verify: ed25519_verify
+      crypto.Cipher:
+        decrypt: aes_decrypt
+        encrypt: aes_encrypt
+      crypto.DiffieHellman:
+        computeSecret: ecdh_computesecret
+      crypto.ECDH:
+        computeSecret: ecdh_computesecret
+      crypto.Hash:
+        digest: sha256_sum
+        update: sha256_sum
+      crypto.Hmac:
+        digest: hmac_new
+        update: hmac_new
+      crypto.Hmac.digest:
+        equal: hmac_equal
+      crypto.createCipheriv:
+        aes-256-cbc: cipher_newcbcencrypter_aes
+        aes-256-gcm: cipher_newgcm
+      crypto.createHash:
+        md5: md5_new
+        sha1: sha1_new
+        sha224: sha224_new
+        sha256: sha256_new
+        sha3-224: sha3_new224
+        sha3-256: sha3_new256
+        sha3-384: sha3_new384
+        sha3-512: sha3_new512
+        sha384: sha384_new
+        sha512: sha512_new
+        shake128: sha3_shake128
+        shake256: sha3_shake256
+      crypto.createHmac:
+        equal: hmac_equal
+      crypto.generateKeyPair:
+        ec: ecdsa_generatekey
+        ed25519: ed25519_generatekey
+        rsa: rsa_generatekey
+      crypto.generateKeyPairSync:
+        ec: ecdsa_generatekey
+        ed25519: ed25519_generatekey
+        rsa: rsa_generatekey
+      crypto.sign:
+        rsa: rsa_signpkcs1v15
+      crypto.subtle:
+        generateKey: aes_newcipher
+        importKey: aes_newcipher
+        exportKey: aes_newcipher
+        wrapKey: aes_encrypt
+        unwrapKey: aes_decrypt
+        deriveBits: pbkdf2_key
+      crypto.tls:
+        DEFAULT_MAX_VERSION: tls_version_tls13
+        DEFAULT_MIN_VERSION: tls_version_tls12
+        SSL_OP_NO_SSLv3: tls_version_ssl30
+        SSL_OP_NO_TLSv1: tls_version_tls10
+        SSL_OP_NO_TLSv1_1: tls_version_tls11
+        SSL_OP_NO_TLSv1_2: tls_version_tls12
+        SSL_OP_NO_TLSv1_3: tls_version_tls13
+        connect: tls_dial
+        createSecureContext: tls_client
+        createSecurePair: tls_client
+        createServer: tls_server
+      crypto.verify:
+        rsa: rsa_verifypkcs1v15
+      hkdf:
+        hkdf: hkdf_key
+        hkdfSync: hkdf_key
+      scrypt:
+        scrypt: scrypt_key
+        scryptSync: scrypt_key
+      bcrypt:
+        hash: bcrypt_hash
+        hashSync: bcrypt_hash
+        compare: bcrypt_compare
+        compareSync: bcrypt_compare
+        genSalt: bcrypt_generate
+        genSaltSync: bcrypt_generate
+      bcryptjs:
+        hash: bcrypt_hash
+        hashSync: bcrypt_hash
+        compare: bcrypt_compare
+        compareSync: bcrypt_compare
+        genSalt: bcrypt_generate
+        genSaltSync: bcrypt_generate
+      tweetnacl:
+        box: nacl_box_seal
+        secretbox: nacl_secretbox_seal
+        sign: nacl_sign
+        hash: sha512_new
+        randomBytes: rand_read
+      tweetnacl.box:
+        open: nacl_box_open
+        keyPair: nacl_box_generatekey
+        before: nacl_box_seal
+      tweetnacl.secretbox:
+        open: nacl_secretbox_open
+      tweetnacl.sign:
+        open: nacl_sign_open
+        keyPair: nacl_sign_generatekey
+        detached: nacl_sign
+      tweetnacl.sign.detached:
+        verify: nacl_sign_open
+      node-forge:
+        md: sha256_new
+        cipher: aes_newcipher
+        hmac: hmac_new
+        pki: rsa_generatekey
+        random: rand_read
+        util: subtle_constanttimecompare
+      forge:
+        md: sha256_new
+        cipher: aes_newcipher
+        hmac: hmac_new
+        pki: rsa_generatekey
+        random: rand_read
+        util: subtle_constanttimecompare
+      forge.md.sha256:
+        create: sha256_new
+      forge.md.sha512:
+        create: sha512_new
+      forge.md.sha1:
+        create: sha1_new
+      forge.md.md5:
+        create: md5_new
+      forge.cipher:
+        createCipher: aes_newcipher
+        createDecipher: aes_newcipher
+      forge.hmac:
+        create: hmac_new
+      forge.pki:
+        rsa: rsa_generatekey
+        certificateFromPem: x509_parsecertificate
+        certificateToPem: x509_createcertificate
+        privateKeyFromPem: x509_parsepkcs1privatekey
+        privateKeyToPem: x509_marshalpkcs1privatekey
+        publicKeyFromPem: x509_parsepkcs1publickey
+        publicKeyToPem: x509_marshalpkcs1publickey
+      forge.pki.rsa:
+        generateKeyPair: rsa_generatekey
+      forge.random:
+        getBytesSync: rand_read
+        getBytes: rand_read
+      forge.pkcs5:
+        pbkdf2: pbkdf2_key
+      crypto-js:
+        SHA256: sha256_new
+        SHA512: sha512_new
+        SHA1: sha1_new
+        SHA3: sha3_new256
+        MD5: md5_new
+        HmacSHA256: hmac_new
+        HmacSHA512: hmac_new
+        AES: aes_newcipher
+        DES: des_newcipher
+        TripleDES: des3_newcipher
+        RC4: rc4_newcipher
+        PBKDF2: pbkdf2_key
+      crypto-js.AES:
+        encrypt: aes_encrypt
+        decrypt: aes_decrypt
+      jose:
+        SignJWT: ecdsa_sign
+        jwtVerify: ecdsa_verify
+        CompactEncrypt: aes_encrypt
+        compactDecrypt: aes_decrypt
+        generateKeyPair: rsa_generatekey
+        generateSecret: rand_read
+      jsonwebtoken:
+        sign: hmac_new
+        verify: hmac_equal
+        decode: hmac_new
+      blake2:
+        createHash: blake2b_new
+      blakejs:
+        blake2b: blake2b_new
+        blake2s: blake2s_new
+        blake2bHex: blake2b_sum
+        blake2sHex: blake2s_sum
+      blake3:
+        hash: blake3_new
+        keyedHash: blake3_keyed

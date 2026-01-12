@@ -1,0 +1,295 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://github.com/smith-xyz/argflow/presets/rules.schema.json",
+    "title": "Argflow Rules File",
+    "description": "Schema for argflow rules files (.yaml)",
+    "type": "object",
+    "required": [
+        "version"
+    ],
+    "properties": {
+        "version": {
+            "type": "string",
+            "description": "Schema version",
+            "enum": [
+                "1.0"
+            ]
+        },
+        "name": {
+            "type": "string",
+            "description": "Preset or rules file name"
+        },
+        "description": {
+            "type": "string",
+            "description": "Human-readable description"
+        },
+        "extends": {
+            "type": "array",
+            "description": "List of presets to inherit from",
+            "items": {
+                "type": "string"
+            }
+        },
+        "include": {
+            "type": "array",
+            "description": "List of rules files to include (relative paths)",
+            "items": {
+                "type": "string"
+            }
+        },
+        "classifications": {
+            "type": "object",
+            "description": "Classification definitions (key -> classification metadata)",
+            "additionalProperties": {
+                "$ref": "#/definitions/classification"
+            }
+        },
+        "languages": {
+            "type": "object",
+            "description": "Language-specific rules",
+            "properties": {
+                "go": {
+                    "$ref": "#/definitions/languageRules"
+                },
+                "python": {
+                    "$ref": "#/definitions/languageRules"
+                },
+                "rust": {
+                    "$ref": "#/definitions/languageRules"
+                },
+                "javascript": {
+                    "$ref": "#/definitions/languageRules"
+                },
+                "typescript": {
+                    "$ref": "#/definitions/languageRules"
+                }
+            },
+            "additionalProperties": {
+                "$ref": "#/definitions/languageRules"
+            }
+        }
+    },
+    "definitions": {
+        "classification": {
+            "type": "object",
+            "required": [
+                "findingType",
+                "operation"
+            ],
+            "properties": {
+                "algorithm": {
+                    "type": "string",
+                    "description": "Algorithm name (e.g., PBKDF2, SHA-256, AES-GCM)"
+                },
+                "algorithmFamily": {
+                    "type": "string",
+                    "description": "Algorithm family (e.g., SHA-2, AES, RSA)"
+                },
+                "findingType": {
+                    "type": "string",
+                    "description": "Category of cryptographic operation",
+                    "enum": [
+                        "kdf",
+                        "hash",
+                        "cipher",
+                        "aead",
+                        "signature",
+                        "mac",
+                        "key_generation",
+                        "key_exchange",
+                        "certificate",
+                        "protocol",
+                        "rng",
+                        "utility",
+                        "unknown"
+                    ]
+                },
+                "assetType": {
+                    "type": "string",
+                    "description": "Type of cryptographic asset"
+                },
+                "operation": {
+                    "type": "string",
+                    "description": "Cryptographic operation",
+                    "enum": [
+                        "keyderive",
+                        "hash",
+                        "encrypt",
+                        "decrypt",
+                        "sign",
+                        "verify",
+                        "keygen",
+                        "keyexchange",
+                        "seal",
+                        "unseal",
+                        "other",
+                        "unknown"
+                    ]
+                },
+                "cryptoFunctions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "primitive": {
+                    "type": "string",
+                    "description": "Cryptographic primitive type",
+                    "enum": [
+                        "kdf",
+                        "hash",
+                        "block-cipher",
+                        "stream-cipher",
+                        "aead",
+                        "signature",
+                        "mac",
+                        "pke",
+                        "kem",
+                        "key-agree",
+                        "certificate",
+                        "protocol",
+                        "drbg",
+                        "xof",
+                        "utility"
+                    ]
+                },
+                "mode": {
+                    "type": "string",
+                    "description": "Cipher mode (e.g., GCM, CBC, CTR)"
+                },
+                "keySize": {
+                    "type": "integer",
+                    "description": "Key size in bits"
+                },
+                "blockSize": {
+                    "type": "integer",
+                    "description": "Block size in bits"
+                },
+                "nonceSize": {
+                    "type": "integer",
+                    "description": "Nonce size in bytes"
+                },
+                "tagSize": {
+                    "type": "integer",
+                    "description": "Authentication tag size in bytes"
+                },
+                "parameterSetIdentifier": {
+                    "type": "string",
+                    "description": "Parameter set identifier"
+                },
+                "curve": {
+                    "type": "string",
+                    "description": "Elliptic curve name"
+                },
+                "padding": {
+                    "type": "string",
+                    "description": "Padding scheme"
+                },
+                "classicalSecurityLevel": {
+                    "type": "integer",
+                    "description": "Classical security level in bits"
+                },
+                "nistQuantumSecurityLevel": {
+                    "type": "integer",
+                    "description": "NIST quantum security level (1-5)",
+                    "minimum": 1,
+                    "maximum": 5
+                },
+                "materialSource": {
+                    "type": "string",
+                    "description": "Key material source",
+                    "enum": [
+                        "generated",
+                        "derived",
+                        "loaded"
+                    ]
+                },
+                "certificateFormat": {
+                    "type": "string",
+                    "description": "Certificate format"
+                },
+                "certificateType": {
+                    "type": "string",
+                    "description": "Certificate type"
+                },
+                "protocolName": {
+                    "type": "string",
+                    "description": "Protocol name"
+                },
+                "protocolType": {
+                    "type": "string",
+                    "description": "Protocol type"
+                },
+                "protocolVersion": {
+                    "type": "string",
+                    "description": "Protocol version"
+                }
+            },
+            "additionalProperties": true
+        },
+        "languageRules": {
+            "type": "object",
+            "properties": {
+                "stdlibPackages": {
+                    "type": "array",
+                    "description": "List of package roots that are part of the language's standard library",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "mappings": {
+                    "type": "object",
+                    "description": "Function mappings: import_path -> { function -> classification_key }",
+                    "additionalProperties": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "structs": {
+                    "type": "object",
+                    "description": "Struct field mappings (Go/Rust): struct_type -> { field -> classification_key }",
+                    "additionalProperties": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "constants": {
+                    "type": "object",
+                    "description": "Constant value mappings (Go/Rust): package -> { constant -> value_info }",
+                    "additionalProperties": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "#/definitions/constantValue"
+                        }
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "constantValue": {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "integer",
+                    "description": "Integer value of the constant"
+                },
+                "protocol": {
+                    "type": "string",
+                    "description": "Protocol name (for TLS version constants)"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "Version string (for TLS version constants)"
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}
